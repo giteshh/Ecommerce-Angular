@@ -8,7 +8,6 @@ import { PublicComponent } from './public/public.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PublicComponent
   ],
   imports: [
     BrowserModule,
