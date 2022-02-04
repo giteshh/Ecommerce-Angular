@@ -1,4 +1,3 @@
-<router-outlet></router-outlet>
 <app-header></app-header>
 
 <!--Carousel Wrapper-->
@@ -14,37 +13,34 @@
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
       <div class="view">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).webp"
-          alt="First slide">
-        <div class="mask rgba-black-light"></div>
+        <img class="d-block w-80" src="/assets/pics/12.jpg" alt="First slide">
+        <div class="mask rgba-light-light"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">Light mask</h3>
-        <p>First text</p>
+        <h1 class="h1-responsive"> <b>DON'T TAKE YOUR MAN OUT</b></h1>
+        <h5>Just visit our website</h5>
       </div>
     </div>
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).webp"
-          alt="Second slide">
-        <div class="mask rgba-black-strong"></div>
+        <img class="d-block w-100" src="/assets/pics/cover-min.jpg" alt="Second slide">
+        <div class="mask rgba-light-strong"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">Strong mask</h3>
-        <p>Secondary text</p>
+        <h3 class="h3-responsive"><b>LATEST & TRENDY WOMEN'S APPAREL</b></h3>
+        <p>Grab it now !!!</p>
       </div>
     </div>
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).webp"
-          alt="Third slide">
+        <img class="d-block w-80" src="/assets/pics/232.jpg" alt="Third slide">
         <div class="mask rgba-black-slight"></div>
       </div>
       <div class="carousel-caption">
-        <h3 class="h3-responsive">Slight mask</h3>
-        <p>Third text</p>
+        <h3 class="h3-responsive"><b>LATEST MEN'S WEAR</b></h3>
+        <p>Go with the latest trend</p>
       </div>
     </div>
   </div>
@@ -62,8 +58,73 @@
 </div>
 <!--/.Carousel Wrapper-->
 
-<!-- another card -->
-<!-- <div class="card mb-3" style="max-width: 540px;">
+<!-- category cards -->
+<div class="row mt-4 ml-2 mr-2">
+<div class="col-md-2">
+  <div class="card">
+    <img src="/assets/pics/on.jpg" class="card-img-top" alt="Smartphones"/>
+    <div class="card-body">
+      <h5 class="card-title">Mobiles</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Shop Now</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-2">
+  <div class="card">
+    <img src="/assets/pics/man.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+    <div class="card-body">
+      <h5 class="card-title">Men's Wear</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-danger">Shop Now</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-2">
+  <div class="card">
+    <img src="/assets/pics/woman-min.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+    <div class="card-body">
+      <h5 class="card-title">Women's Wear</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-success">Shop Now</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-2">
+  <div class="card">
+    <img src="/assets/pics/sunglassfemale.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+    <div class="card-body">
+      <h5 class="card-title">Sunglasses & More</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-warning">Shop Now</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-2">
+  <div class="card">
+    <img src="/assets/pics/shoe.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+    <div class="card-body">
+      <h5 class="card-title">Shoes</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-info">Shop Now</a>
+    </div>
+  </div>
+</div>
+<div class="col-md-2">
+  <div class="card">
+    <img src="/assets/pics/bag-min.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+    <div class="card-body">
+      <h5 class="card-title">Bags & Bags</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-secondary">Shop Now</a>
+    </div>
+  </div>
+</div>
+</div>
+<!-- end of category cards -->
+
+<!-- sale card -->
+<div class="card mb-3 mt-4 ml-4" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img
@@ -84,50 +145,7 @@
         </p>
       </div>
     </div>
-  </div>
-</div> -->
 
-<!-- category cards -->
-<div class="row mt-4 ml-2 mr-2">
-<div class="col-md-3">
-  <div class="card">
-    <img src="https://www.fashionbeans.com/wp-content/uploads/2019/12/19winterstyleguidelb21.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#!" class="btn btn-primary">Button</a>
-    </div>
   </div>
 </div>
-<div class="col-md-3">
-  <div class="card">
-    <img src="https://media.istockphoto.com/photos/fashion-sweet-woman-having-fun-with-lollipop-over-white-background-picture-id529664088?b=1&k=20&m=529664088&s=170667a&w=0&h=MhVEewjZJaiR3Fs4TGXsvBteaa5pasb_G8pb9xbKoiE=" class="card-img-top" alt="Fissure in Sandstone"/>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#!" class="btn btn-primary">Button</a>
-    </div>
-  </div>
-</div>
-<div class="col-md-3">
-  <div class="card">
-    <img src="/assets/pics/oneplus.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#!" class="btn btn-primary">Button</a>
-    </div>
-  </div>
-</div>
-<div class="col-md-3">
-  <div class="card">
-    <img src="https://cdn.wallpapersafari.com/10/3/GkMmIV.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#!" class="btn btn-primary">Button</a>
-    </div>
-  </div>
-</div>
-</div>
-<!-- end of category cards -->
+<!-- end of sale card -->
