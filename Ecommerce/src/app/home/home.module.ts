@@ -6,6 +6,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HeaderComponent } from './pages/header/header.component';
 import {ProductMenuComponent} from "./pages/product-menu/product-menu.component";
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { ProductDescriptionComponent } from './pages/product-description/product-description.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     HomeComponent,
     HeaderComponent,
     ProductMenuComponent,
-    HomePageComponent
+    HomePageComponent,
+    ProductDescriptionComponent
   ],
   imports: [
     CommonModule,
