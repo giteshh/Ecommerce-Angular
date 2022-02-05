@@ -19,8 +19,7 @@ import { ProductDescriptionComponent } from './pages/product-description/product
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
-    CommonModule
+    HomeRoutingModule
   ]
 })
 export class HomeModule { }

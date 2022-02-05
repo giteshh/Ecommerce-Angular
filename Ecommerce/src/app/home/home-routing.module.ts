@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {ProductMenuComponent} from "./pages/product-menu/product-menu.component";
 import {HomePageComponent} from "./pages/home-page/home-page.component";
+import {ProductDescriptionComponent} from "./pages/product-description/product-description.component";
 
 const routes: Routes = [
 {
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path: 'Home', component: HomePageComponent},
   {path: 'header', component: HeaderComponent},
   {path: 'productMenu', component: ProductMenuComponent},
-  {path: 'productDescription', component: ProductMenuComponent},
+  {path: 'productDescription', component: ProductDescriptionComponent},
 
 ]
 }
