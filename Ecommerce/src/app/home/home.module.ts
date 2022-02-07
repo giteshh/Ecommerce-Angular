@@ -8,14 +8,15 @@ import {ProductMenuComponent} from "./pages/product-menu/product-menu.component"
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductDescriptionComponent } from './pages/product-description/product-description.component';
 
-
 @NgModule({
   declarations: [
     HomeComponent,
     HeaderComponent,
     ProductMenuComponent,
     HomePageComponent,
-    ProductDescriptionComponent
+    ProductDescriptionComponent,
+
+
   ],
   imports: [
     CommonModule,
