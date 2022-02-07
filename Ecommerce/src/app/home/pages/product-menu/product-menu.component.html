@@ -3,87 +3,24 @@
 <!--product menu 1 start-->
 <div class="row mt-5">
   <div class="col-md-2"></div>
-  <div class="col-md-2">
+  <div class="col-md-2" *ngFor="let product of productList">
     <div class="card">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/m1.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
+        <img src="{{product.imageUrl}}" class="img-thumbnail" alt="Responsive image"/>
       </div>
       <div class="card-body">
-        <h6 class="card-title">OnePlus 9 Pro 5G <br>
-          (Morning Mist, 12GB RAM, 256GB Storage)</h6>
-        <p class="card-text">
-          ₹69,999
-          Get it by Thursday, Feb 10
-        </p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4" routerLink="/home/productDescription">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
+        <h5 class="text-center"><b>{{product.name}}</b></h5>
+        <p>{{product.description}}</p>
+        <h6 class="text-center"><b>Price:</b> {{product.rate}}/-</h6>
+        <a href="#!" class="btn btn-sm btn-primary ml-4" routerLink="/home/productDescription"
+           data-toggle="tooltip" data-placement="bottom" title="View product description">
+          <i class="fa fa-eye fa-lg" ></i></a>
+        <a href="#!" class="btn btn-sm btn-danger ml-2" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
   </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
   </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2"></div>
-</div>
 <!--end of product 1 menu-->
 
 <!--product menu 2 start-->
@@ -101,9 +38,9 @@
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
+        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
+        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
@@ -120,9 +57,9 @@
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
+        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
+        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
@@ -139,9 +76,9 @@
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
+        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
+        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
@@ -158,9 +95,9 @@
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
+        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
+        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
@@ -184,9 +121,9 @@
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
+        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
+        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
@@ -203,9 +140,9 @@
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
+        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
+        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
@@ -222,9 +159,9 @@
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4">
+        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2">
+        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
@@ -241,9 +178,9 @@
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
-        <a class="btn btn-sm btn-primary ml-4">
+        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#" class="btn btn-sm btn-danger ml-2">
+        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>

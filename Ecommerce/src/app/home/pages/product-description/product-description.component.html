@@ -1,34 +1,7 @@
 <app-header></app-header>
 
-<!--desc start-->
-<!--<div class="row mt-4">-->
-<!--  <div class="col-md-8 ml-4">-->
-<!--    <img src="/assets/pics/j1.jpg" style="height: 300px">-->
-<!--  </div>-->
-<!--  <div class="col-md-4">-->
-<!--    <form>-->
-<!--      <div>-->
-<!--        <label>Name</label>-->
-<!--        <input type="text">-->
-<!--      </div>-->
-
-<!--      <div>-->
-<!--        <label>Description</label>-->
-<!--        <input type="text">-->
-<!--      </div>-->
-<!--      <div>-->
-<!--        <label>Quantity</label>-->
-<!--        <input type="number">-->
-<!--      </div>-->
-<!--      <div>-->
-<!--        <label>Price</label>-->
-<!--        <input type="number">-->
-<!--      </div>-->
-<!--    </form>-->
-<!--  </div>-->
-<!--</div>-->
-<!--desc end-->
-
+<a href="#!" class="btn btn-sm btn-blue ml-4 mt-2" routerLink="/home/productMenu">
+  <i class="fa fa-arrow-left fa-lg" ></i></a>
 <div class="row mt-4">
   <div class="col-md-4 ml-3">
         <img src="/assets/pics/j1.jpg">
@@ -39,10 +12,20 @@
        <h1>{{product.name}}</h1>
        <p>{{product.description}}</p>
        <p>{{product.rate}}</p>
-
-
    </div>
 
+  </div>
+  <div class="col-md-4">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <button class="btn btn-md btn-primary">Add to Cart</button>
+    <button class="btn btn-md btn-pink">Add to Wishlist</button>
+    <button class="btn btn-md btn-purple">Buy Now</button>
   </div>
   <div class="col-md-4"></div>
 </div>
