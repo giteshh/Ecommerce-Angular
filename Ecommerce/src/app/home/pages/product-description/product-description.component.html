@@ -1,14 +1,49 @@
 <app-header></app-header>
 
 <!--desc start-->
-<div class="row mt-4">
-  <div class="col-md-6 ml-4">
-    <img src="/assets/pics/j1.jpg">
-  </div>
-  <div class="col-md-6">
-    <p>Jeans</p>
-    <p>Price- 4000/- </p>
-  </div>
-</div>
+<!--<div class="row mt-4">-->
+<!--  <div class="col-md-8 ml-4">-->
+<!--    <img src="/assets/pics/j1.jpg" style="height: 300px">-->
+<!--  </div>-->
+<!--  <div class="col-md-4">-->
+<!--    <form>-->
+<!--      <div>-->
+<!--        <label>Name</label>-->
+<!--        <input type="text">-->
+<!--      </div>-->
+
+<!--      <div>-->
+<!--        <label>Description</label>-->
+<!--        <input type="text">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label>Quantity</label>-->
+<!--        <input type="number">-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <label>Price</label>-->
+<!--        <input type="number">-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</div>-->
 <!--desc end-->
+
+<div class="row mt-4">
+  <div class="col-md-4 ml-3">
+        <img src="/assets/pics/j1.jpg">
+  </div>
+  <div class="col-md-4">
+<!--   <div *ngFor="let product of productDesc">-->
+   <div *ngFor="let product of productDesc">
+       <h1>{{product.name}}</h1>
+       <p>{{product.description}}</p>
+       <p>{{product.rate}}</p>
+
+
+   </div>
+
+  </div>
+  <div class="col-md-4"></div>
+</div>
 
