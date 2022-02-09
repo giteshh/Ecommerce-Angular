@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
-import {Product} from "../../product";
+import {Product, products} from "../../product";
 
 @Component({
   selector: 'app-product-menu',
@@ -9,13 +9,13 @@ import {Product} from "../../product";
 })
 export class ProductMenuComponent implements OnInit {
 
-  public items: any = [];
+  products = products;
 
   constructor(private homeService: HomeService) {
   }
 
   ngOnInit(): void {
-    this.homeService.getProducts().subscribe(data => this.items = data);
+    this.homeService.getProducts().subscribe(data => this.products = data);
   }
 
 }

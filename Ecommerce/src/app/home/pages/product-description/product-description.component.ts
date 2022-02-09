@@ -1,42 +1,35 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
 import {ActivatedRoute} from "@angular/router";
-import {Product} from "../../product";
+import {Product, products} from "../../product";
+
+
 
 @Component({
   selector: 'app-product-description',
   templateUrl: './product-description.component.html',
   styleUrls: ['./product-description.component.css']
 })
-export class ProductDescriptionComponent {
+export class ProductDescriptionComponent implements OnInit{
 
-  productId: number = 0;
-  product: Product = {
-    id: 0,
-    name: '',
-    description: '',
-    rate: 0,
-    quantity: 0
-  }
+  product: Product | any;
 
-  // items: Product[] = [];
 
-  products: Product[] = [];
 
   constructor(private homeService: HomeService,
               private activatedRoute: ActivatedRoute,
               private route: ActivatedRoute) {
-this.getDetail(this.product)
+
   }
 
-  getDetail(product: Product) {
-    this.homeService
-      .detail(product)
-      .subscribe(
-        () => (this.products = this.products.filter((p) => p.id !== product.id))
+  ngOnInit() {
+    // First get the product id from the current route.
+    const routeParams = this.route.snapshot.paramMap;
+    const productIdFromRoute = Number(routeParams.get('productId'));
 
-      );
-    console.log(product.id == 2)
+    // Find the product that correspond with the id provided in route.
+    this.product = products.find(product => product.id === productIdFromRoute);
   }
+
 }
 
