@@ -1,21 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HomeService} from "../../home.service";
+import {ActivatedRoute} from "@angular/router";
+import {Product} from "../../product";
 
 @Component({
   selector: 'app-product-description',
   templateUrl: './product-description.component.html',
   styleUrls: ['./product-description.component.css']
 })
-export class ProductDescriptionComponent implements OnInit {
+export class ProductDescriptionComponent {
 
-  productDesc: any = [
-    {'id':1, 'name': 'mobile1', 'description':'black, 8gb RAM, 256gb Storage', 'rate': 12500},
-    {'id':2, 'name': 'mobile2', 'description':'black, 6gb RAM, 128gb Storage', 'rate': 13800},
-    {'id':3, 'name': 'mobile3', 'description':'black, 8gb RAM, 256gb Storage', 'rate': 14500},
-    {'id':4, 'name': 'mobile4', 'description':'black, 6gb RAM, 128gb Storage', 'rate': 15500},
-  ]
-  constructor() { }
-
-  ngOnInit(): void {
+  productId: number = 0;
+  product: Product = {
+    id: 0,
+    name: '',
+    description: '',
+    rate: 0,
+    quantity: 0
   }
 
+  // items: Product[] = [];
+
+  products: Product[] = [];
+
+  constructor(private homeService: HomeService,
+              private activatedRoute: ActivatedRoute,
+              private route: ActivatedRoute) {
+this.getDetail(this.product)
+  }
+
+  getDetail(product: Product) {
+    this.homeService
+      .detail(product)
+      .subscribe(
+        () => (this.products = this.products.filter((p) => p.id !== product.id))
+
+      );
+    console.log(product.id == 2)
+  }
 }
+
