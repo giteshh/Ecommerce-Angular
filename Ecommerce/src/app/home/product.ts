@@ -14,7 +14,7 @@ export const products =
       id: 1,
       name: "OnePlus 9 Pro 5G ",
       description: "Morning Mist, 12GB RAM, 256GB Storage",
-      rate: 69999,
+      rate:  69999,
       imageUrl: "/assets/pics/m1.jpg"
     },
     {

@@ -19,7 +19,6 @@ export class ProductDescriptionComponent implements OnInit{
   constructor(private homeService: HomeService,
               private activatedRoute: ActivatedRoute,
               private route: ActivatedRoute) {
-
   }
 
   ngOnInit() {
@@ -29,6 +28,12 @@ export class ProductDescriptionComponent implements OnInit{
 
     // Find the product that correspond with the id provided in route.
     this.product = products.find(product => product.id === productIdFromRoute);
+  }
+
+  // move product into shopping cart
+  addToCart(product: Product) {
+    this.homeService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
   }
 
 }

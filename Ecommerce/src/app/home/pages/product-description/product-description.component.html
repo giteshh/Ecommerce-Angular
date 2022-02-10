@@ -11,7 +11,7 @@
     <div>
       <h3><b>{{ product.name }}</b></h3>
       <p>{{ product.description }}</p>
-      <h4>{{ product.rate | currency }}</h4>
+      <h4>{{ product.rate | currency:'INR' }}</h4>
     </div>
   </div>
     <div class="col-md-2"></div>
@@ -21,9 +21,9 @@
     <div class="col-md-6"></div>
 
     <div class="col-md-6">
-      <button class="btn btn-md btn-primary">Add to Cart</button>
+      <button class="btn btn-md btn-primary" (click)="addToCart(product)">Add to Cart</button>
       <button class="btn btn-md btn-pink">Add to Wishlist</button>
-      <button class="btn btn-md btn-purple">Buy Now</button>
+      <button class="btn btn-md btn-purple" disabled>Buy Now</button>
     </div>
   </div>
 

@@ -9,7 +9,7 @@ import {Product} from "./product";
 export class HomeService {
 
   private productUrl: string = "/assets/data/products.json/";
-  product: Product[]=[];
+  items: Product[]=[];
 
   constructor(private http: HttpClient) {
   }
@@ -18,17 +18,24 @@ export class HomeService {
     return this.http.get<Product[]>(this.productUrl);
   }
 
-  // detail(productId: number, data: any): Observable<any> {
-  //   return this.http.get<Product['id']>(this.productUrl + productId, data);
-  // }
-
   detail(product: Product): Observable<Product>{
     const url = `${this.productUrl}/${product.id}`;
     return this.http.get<Product>(url);
   }
 
-   getDetail(id: any):Observable<any>{
-    return this.http.get(this.productUrl + id)
+   // cart service start
+  addToCart(product: Product) {
+    this.items.push(product);
   }
 
+  getItems() {
+    return this.items;
+  }
+
+  clearCart() {
+    this.items = [];
+    return this.items;
+  }
+
+// cart service end
 }
