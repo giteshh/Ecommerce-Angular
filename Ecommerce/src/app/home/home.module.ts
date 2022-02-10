@@ -8,6 +8,7 @@ import {ProductMenuComponent} from "./pages/product-menu/product-menu.component"
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ProductDescriptionComponent } from './pages/product-description/product-description.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CartComponent } from './pages/cart/cart.component';
     HomePageComponent,
     ProductDescriptionComponent,
     CartComponent,
+    WishlistComponent,
 
 
   ],
