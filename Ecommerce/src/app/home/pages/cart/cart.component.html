@@ -3,6 +3,9 @@
 <a href="#!" class="btn btn-sm btn-blue ml-4 mt-2" routerLink="/home/productMenu">
   <i class="fa fa-arrow-left fa-lg"></i></a>
 
+<a href="#" class="btn btn-sm btn-red ml-4 mt-2" (click)="clearCart()">
+  <i class="fa fa-trash fa-lg"></i></a>
+
 <div class="card text-center bg-warning" id="noItemCardInCart" *ngIf="!items.length">
   <div class="card-body">
     <i class="fa fa-4x fa-shopping-cart"></i>

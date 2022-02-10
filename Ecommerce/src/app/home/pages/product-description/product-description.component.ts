@@ -14,6 +14,8 @@ export class ProductDescriptionComponent implements OnInit{
 
   product: Product | any;
 
+  products = products;
+
 
 
   constructor(private homeService: HomeService,

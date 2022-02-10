@@ -19,3 +19,11 @@
   width: 50px;
   height: 80px;
 }
+
+#imgSimilarProducts {
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+}
+
+

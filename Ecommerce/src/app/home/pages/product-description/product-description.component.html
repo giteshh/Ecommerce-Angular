@@ -21,10 +21,12 @@
             <p class="mt-4 pt-3">{{ product.description }}</p>
             <h4 class="mt-4 pt-5">{{ product.rate | currency:'INR' }}</h4>
             <div class="mt-4">
-              <button class="btn btn-sm btn-primary" (click)="addToCart(product)">
-                <i class="fa fa-shopping-cart mr-2"></i>Add to Cart</button>
-              <button class="btn btn-sm btn-pink">
-                <i class="fa fa-heart mr-2"></i>Add to Wishlist</button>
+              <button class="btn btn-md btn-primary" (click)="addToCart(product)">
+                <i class="fa fa-shopping-cart mr-2"></i>Add to Cart
+              </button>
+              <button class="btn btn-md btn-pink">
+                <i class="fa fa-heart mr-2"></i>Add to Wishlist
+              </button>
               <!--            <button class="btn btn-sm btn-purple" disabled>-->
               <!--              <i class="fa fa-money-check mr-2"></i>Buy Now</button>-->
             </div>
@@ -34,100 +36,21 @@
       <div class="col-md-2"></div>
     </div>
   </div>
+</div>
 
-  <div class="card-footer text-muted">
+<h2 class="mt-4 mb-4 ml-4">Similar Products</h2>
 
-          <button class="btn btn-md btn-primary" (click)="addToCart(product)">
-            <i class="fa fa-shopping-cart mr-2"></i>Add to Cart</button>
-          <button class="btn btn-md btn-pink" (click)="addToWishlist(product)">
-            <i class="fa fa-heart mr-2"></i>Add to Wishlist</button>
-<!--          <button class="btn btn-sm btn-purple" disabled>-->
-<!--            <i class="fa fa-money-check mr-2"></i>Buy Now</button>-->
-        </div>
-
+<div class="row ml-4">
+  <div class="col-md-3" *ngFor="let item of products">
+    <div class="card" style="width: 16rem;" id="cardHeight">
+      <img src="{{item.imageUrl}}" class="card-img-top" id="imgSimilarProducts">
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">{{item.description}}</p>
+        <p class="card-text">{{item.rate}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
+  </div>
+</div>
 
-
-
-<!--    <div class="row">-->
-<!--      &lt;!&ndash;      <div class="col-md-6"></div>&ndash;&gt;-->
-
-<!--      <div class="col-md-12">-->
-<!--        <button class="btn btn-md btn-primary" (click)="addToCart(product)">-->
-<!--          <i class="fa fa-shopping-cart mr-2"></i>Add to Cart-->
-<!--        </button>-->
-<!--        <button class="btn btn-md btn-pink">-->
-<!--          <i class="fa fa-heart mr-2"></i>Add to Wishlist-->
-<!--        </button>-->
-<!--        <button class="btn btn-md btn-purple" disabled>-->
-<!--          <i class="fa fa-money-check mr-2"></i>Buy Now-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-
-
-<!--<div class="row mt-4" id="colEdit" *ngIf="product">-->
-<!--  <div class="col-md-2"></div>-->
-<!--  <div class="col-md-4 ml-3">-->
-<!--    <img src="{{product.imageUrl}}" class="imageEdit">-->
-<!--  </div>-->
-<!--  <div class="col-md-4">-->
-<!--    <div>-->
-<!--      <h3 class="mt-4 pt-5"><b>{{ product.name }}</b></h3>-->
-<!--      <p class="mt-4 pt-3">{{ product.description }}</p>-->
-<!--      <h4 class="mt-4 pt-5">{{ product.rate | currency:'INR' }}</h4>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="col-md-2"></div>-->
-<!--</div>-->
-
-<!--row for buttons only-->
-<!--<div class="row">-->
-<!--  <div class="col-md-6"></div>-->
-
-<!--  <div class="col-md-6">-->
-<!--    <button class="btn btn-md btn-primary" (click)="addToCart(product)">-->
-<!--      <i class="fa fa-shopping-cart mr-2"></i>Add to Cart</button>-->
-<!--    <button class="btn btn-md btn-pink">-->
-<!--      <i class="fa fa-heart mr-2"></i>Add to Wishlist</button>-->
-<!--    <button class="btn btn-md btn-purple" disabled>-->
-<!--      <i class="fa fa-money-check mr-2"></i>Buy Now</button>-->
-<!--  </div>-->
-<!--</div>-->
-<!--end of row for buttons only-->
-
-
-<!--<div class="row">-->
-<!--  <div class="col-md-2"></div>-->
-<!--  <div class="col-md-4">-->
-<!--    <div class="card-group ml-5" style="width: 25rem; height: 5rem">-->
-<!--      <div class="card mr-3">-->
-<!--        <div class="card-body">-->
-<!--          <img src="{{product.imageUrl}}" class="card-img-top">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="card mr-3">-->
-<!--        <div class="card-body">-->
-<!--          <img src="{{product.imageUrl}}" class="card-img-top">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="card mr-3">-->
-<!--        <div class="card-body">-->
-<!--          <img src="{{product.imageUrl}}" class="card-img-top">-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="col-md-6">-->
-
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-<!--<button class="btn btn-sm btn-primary" (click)="addToCart(product)">-->
-<!--  <i class="fa fa-shopping-cart mr-2"></i>Add to Cart</button>-->
-<!--<button class="btn btn-sm btn-pink">-->
-<!--  <i class="fa fa-heart mr-2"></i>Add to Wishlist</button>-->
-<!--<button class="btn btn-sm btn-purple" disabled>-->
-<!--  <i class="fa fa-money-check mr-2"></i>Buy Now</button>-->

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {map, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Product} from "./product";
 
@@ -10,6 +10,7 @@ export class HomeService {
 
   private productUrl: string = "/assets/data/products.json/";
   items: Product[]=[];
+  wishlistItems: Product[]=[];
 
   constructor(private http: HttpClient) {
   }
@@ -38,7 +39,18 @@ export class HomeService {
   }
 // cart service end
 
+  //wishlist services
   addToWishlist(product: Product) {
-    this.items.push(product);
+    this.wishlistItems.push(product);
   }
+
+  getWishlistItems() {
+    return this.wishlistItems;
+  }
+
+  clearWishlist() {
+    this.wishlistItems = [];
+    return this.wishlistItems;
+  }
+
 }
