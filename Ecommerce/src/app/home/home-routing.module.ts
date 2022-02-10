@@ -5,6 +5,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import {ProductMenuComponent} from "./pages/product-menu/product-menu.component";
 import {HomePageComponent} from "./pages/home-page/home-page.component";
 import {ProductDescriptionComponent} from "./pages/product-description/product-description.component";
+import {CartComponent} from "./pages/cart/cart.component";
 
 const routes: Routes = [
 {
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'header', component: HeaderComponent},
   {path: 'productMenu', component: ProductMenuComponent},
   {path: 'products/:productId', component: ProductDescriptionComponent},
+    {path: 'cart', component: CartComponent},
 
 ]
 }
