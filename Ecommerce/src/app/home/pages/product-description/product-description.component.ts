@@ -36,5 +36,11 @@ export class ProductDescriptionComponent implements OnInit{
     window.alert('Your product has been added to the cart!');
   }
 
+  //move products to wishlist
+  addToWishlist(product: Product) {
+    this.homeService.addToWishlist(product);
+    window.alert('Your product has been added to the your Wishlist!');
+  }
+
 }
 

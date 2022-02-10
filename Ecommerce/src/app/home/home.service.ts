@@ -36,6 +36,9 @@ export class HomeService {
     this.items = [];
     return this.items;
   }
-
 // cart service end
+
+  addToWishlist(product: Product) {
+    this.items.push(product);
+  }
 }
