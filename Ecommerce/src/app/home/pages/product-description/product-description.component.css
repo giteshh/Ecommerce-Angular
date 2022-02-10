@@ -1,4 +1,21 @@
 .imageEdit {
   height: 400px;
   width: 400px;
+  /*border: 1px solid black;*/
+}
+
+#colEdit {
+  border: 1px solid black;
+}
+
+#allPics {
+  /*max-width: 12rem;*/
+  /*max-height: 12rem;*/
+  width: 35rem;
+  height: 10rem;
+}
+
+.imageGallery{
+  width: 50px;
+  height: 80px;
 }
