@@ -4,14 +4,14 @@
 <div class="row mt-5">
   <div class="col-md-2"></div>
   <div class="col-md-2" *ngFor="let product of products">
-    <div class="card">
+    <div class="card" id="cardHeight">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
         <img src="{{product.imageUrl}}" class="img-thumbnail" alt="Responsive image"/>
       </div>
       <div class="card-body">
         <h5 class="text-center"><b>{{product.name}}</b></h5>
         <p>{{product.description}}</p>
-        <h6 class="text-center"><b>Price:</b> {{product.rate}}/-</h6>
+        <h6 class="text-center"><b>Price:</b> {{product.rate | currency:'INR' }}/-</h6>
         <a href="#!" class="btn btn-sm btn-primary ml-4" routerLink="/home/products/{{product.id}}"
            data-toggle="tooltip" data-placement="bottom" title="View product description">
           <i class="fa fa-eye fa-lg" ></i></a>

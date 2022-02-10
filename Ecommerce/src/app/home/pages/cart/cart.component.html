@@ -3,7 +3,19 @@
 <a href="#!" class="btn btn-sm btn-blue ml-4 mt-2" routerLink="/home/productMenu">
   <i class="fa fa-arrow-left fa-lg"></i></a>
 
-<h3>Cart</h3>
+<h3 class="ml-4 mt-4">Cart</h3>
+
+
+<div class="card text-center mt-4 bg-warning" *ngIf="!items.length">
+
+  <div class="card-body">
+    <h1 class="card-title">Oops, your cart is empty!</h1>
+    <p class="card-text">Click on shop now to fill your cart with happiness.</p>
+    <a href="#" class="btn btn-default">Shop Now</a>
+  </div>
+
+</div>
+
 
 <div class="row">
   <div class="col-md-2"></div>

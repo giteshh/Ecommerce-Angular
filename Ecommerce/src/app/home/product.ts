@@ -20,7 +20,7 @@ export const products =
     {
       id: 2,
       name: "Apple iPhone 12",
-      description: "Purple, 128GB",
+      description: "Color-Green, 8GB RAM, 128GB Storage",
       rate: 70900,
       imageUrl: "/assets/pics/ipo.jpg"
     },
@@ -34,7 +34,7 @@ export const products =
     {
       id: 4,
       name: "Samsung Galaxy M12",
-      description: "Blue,4GB RAM, 64GB Storage",
+      description: "Color: Blue,4GB RAM, 64GB Storage",
       rate: 10499,
       imageUrl: "/assets/pics/sam.jpg"
     }
