@@ -1,6 +1,6 @@
 <!--Navbar -->
 <nav class="nav aqua-gradient navbar navbar-expand-lg py-2 mb-0 font-weight-light z-depth-1">
-   <a class="navbar-brand white-text font-weight-light" href="#" routerLink="/home/Home">V A S T R A H U N T  </a>
+   <a class="navbar-brand white-text font-weight-light" routerLink="/home/Home">V A S T R A H U N T  </a>
 <!--    <img width="50" height="50" src="\assets\pics\logo2.png">-->
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
@@ -10,11 +10,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
     <ul class="navbar-nav mr-auto white-text">
       <li class="nav-item ">
-        <a class="nav-link white-text" href="#" data-toggle="tooltip" data-placement="bottom" title="Shoes">
+        <a class="nav-link disabled" data-toggle="tooltip" data-placement="bottom" title="Shoes">
           <i class="fa fa-shoe-prints mr-2"></i>Shoes</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link white-text button" href="#" routerLink="/home/productMenu" data-toggle="tooltip"
+        <a class="nav-link white-text button" routerLink="/home/productMenu" data-toggle="tooltip"
            data-placement="bottom" title="Mobile">
           <i class="fa fa-mobile mr-2"></i>Mobiles</a>
       </li>
@@ -24,9 +24,9 @@
           <i class="fa fa-shopping-bag mr-2"></i>Fashion
         </a>
         <div class="dropdown-menu dropdown-default text-center" aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="#">Men</a>
-          <a class="dropdown-item" href="#">Women</a>
-          <a class="dropdown-item" href="#">Kids</a>
+          <a class="dropdown-item disabled">Men</a>
+          <a class="dropdown-item disabled">Women</a>
+          <a class="dropdown-item disabled">Kids</a>
         </div>
       </li>
     </ul>
@@ -42,11 +42,12 @@
           aria-haspopup="true" aria-expanded="false" data-placement="bottom" title="My-Profile">
           <i class="fas fa-user"></i>
         </a>
-        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+        <div class="dropdown-menu dropdown-menu-right dropdown-default text-center"
           aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item">My Profile</a>
+          <a class="dropdown-item" routerLink="/login">Login</a>
+          <a class="dropdown-item">Register</a>
+          <a class="dropdown-item">Logout</a>
         </div>
       </li>
       <li class="nav-item">

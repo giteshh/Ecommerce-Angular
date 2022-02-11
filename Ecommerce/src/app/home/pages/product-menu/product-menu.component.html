@@ -12,183 +12,42 @@
         <h5 class="text-center"><b>{{product.name}}</b></h5>
         <p>{{product.description}}</p>
         <h6 class="text-center"><b>Price:</b> {{product.rate | currency:'INR' }}/-</h6>
-        <a href="#!" class="btn btn-sm btn-primary ml-4" routerLink="/home/productDescription/{{product.id}}"
+        <a class="btn btn-sm btn-primary ml-4" routerLink="/home/productDescription/{{product.id}}"
            data-toggle="tooltip" data-placement="bottom" title="View product description">
-          <i class="fa fa-eye fa-lg" ></i></a>
-        <a href="#" class="btn btn-sm btn-danger ml-2" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"
-        (click)="addToWishlist(product)">
+          <i class="fa fa-eye fa-lg"></i></a>
+        <a class="btn btn-sm btn-danger ml-2" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"
+           (click)="addToWishlist(product)">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
   </div>
-  </div>
+</div>
 <!--end of product 1 menu-->
 
-<!--product menu 2 start-->
-<div class="row mt-5">
+<!--product menu 2 (dummy products) start-->
+<div class="row mt-5" *ngFor="let n of numSequence(4); let i = index;">
   <div class="col-md-2"></div>
-  <div class="col-md-2">
+  <div class="col-md-2" *ngFor="let n of numSequence(4); let i = index;">
     <div class="card">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
+        <img src="/assets/pics/ip.jpg" class="img-thumbnail" alt="Responsive image"/>
       </div>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
+        <h5 class="text-center"><b>Product Name</b></h5>
+        <p>Some description of product</p>
+        <h6 class="text-center"><b>Price:</b> xx,xxx /-</h6>
+        <a class="btn btn-sm btn-primary ml-4 disabled"
+           data-toggle="tooltip" data-placement="bottom" title="View product description" aria-disabled="true">
           <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
+        <a class="btn btn-sm btn-danger ml-2 disabled" data-toggle="tooltip" data-placement="bottom"
+           title="Add to Wishlist"
+           aria-disabled="true">
           <i class="fa fa-heart fa-lg"></i></a>
       </div>
     </div>
   </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2"></div>
 </div>
-<!--end of product 2 menu-->
-
-<!--product menu 3 start-->
-<div class="row mt-5">
-  <div class="col-md-2"></div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-fluid"/>
-        <a href="#!">
-          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-        </a>
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#!" class="btn btn-sm btn-primary ml-4 disabled" aria-disabled="true">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a href="#!" class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-2"></div>
-</div>
-<!--end of product 3 menu-->
+<!--end of product 2 (dummy products)menu-->
 
 <!--pagination-->
 <nav aria-label="Page navigation example">

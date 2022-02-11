@@ -23,4 +23,9 @@ export class ProductMenuComponent implements OnInit {
     this.homeService.addToWishlist(product);
     window.alert('Your product has been added to the your Wishlist!');
   }
+
+  //function to return list of numbers from 0 to n-1
+  numSequence(n: number): Array<number> {
+    return Array(n);
+  }
 }
