@@ -18,4 +18,9 @@ export class ProductMenuComponent implements OnInit {
     this.homeService.getProducts().subscribe(data => this.products = data);
   }
 
+  //move products to wishlist
+  addToWishlist(product: Product) {
+    this.homeService.addToWishlist(product);
+    window.alert('Your product has been added to the your Wishlist!');
+  }
 }

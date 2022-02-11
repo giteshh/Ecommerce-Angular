@@ -24,7 +24,7 @@
               <button class="btn btn-md btn-primary" (click)="addToCart(product)">
                 <i class="fa fa-shopping-cart mr-2"></i>Add to Cart
               </button>
-              <button class="btn btn-md btn-pink">
+              <button class="btn btn-md btn-pink" (click)="addToWishlist(product)">
                 <i class="fa fa-heart mr-2"></i>Add to Wishlist
               </button>
               <!--            <button class="btn btn-sm btn-purple" disabled>-->
@@ -43,12 +43,12 @@
 <div class="row ml-4">
   <div class="col-md-3" *ngFor="let item of products">
     <div class="card" style="width: 16rem;" id="cardHeight">
-      <img src="{{item.imageUrl}}" class="card-img-top" id="imgSimilarProducts">
+      <img src="{{ item.imageUrl }}" class="card-img-top" id="imgSimilarProducts">
       <div class="card-body">
-        <h5 class="card-title">{{item.name}}</h5>
-        <p class="card-text">{{item.description}}</p>
-        <p class="card-text">{{item.rate}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">{{ item.name }}</h5>
+        <p class="card-text">{{ item.description }}</p>
+        <p class="card-text">{{ item.rate | currency:"INR" }}</p>
+        <a href="#" class="btn btn-primary" >Shop Now</a>
       </div>
     </div>
   </div>

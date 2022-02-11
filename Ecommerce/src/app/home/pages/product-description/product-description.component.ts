@@ -30,6 +30,8 @@ export class ProductDescriptionComponent implements OnInit{
 
     // Find the product that correspond with the id provided in route.
     this.product = products.find(product => product.id === productIdFromRoute);
+
+    // this.homeService.getProducts().subscribe(data => this.products = data);
   }
 
   // move product into shopping cart
