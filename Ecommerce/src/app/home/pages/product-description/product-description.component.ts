@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
 import {ActivatedRoute} from "@angular/router";
-import {Product, products} from "../../product";
+import {Product, products} from "../../../../assets/data/product";
 
 
 

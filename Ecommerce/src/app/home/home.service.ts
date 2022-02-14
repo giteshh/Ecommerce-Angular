@@ -1,30 +1,36 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {Product} from "./product";
+import {Product} from "../../assets/data/product";
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
-  private productUrl: string = "/assets/data/products.json/";
-  items: Product[]=[];
-  wishlistItems: Product[]=[];
+  private productObject: string = "/assets/data/product.ts";
+
+  items: Product[] = [];
+  wishlistItems: Product[] = [];
 
   constructor(private http: HttpClient) {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productUrl);
+    return this.http.get<Product[]>(this.productObject);
   }
 
-  detail(product: Product): Observable<Product>{
-    const url = `${this.productUrl}/${product.id}`;
+  // getProducts() {
+  //   return this.http.get<{id: number, name: string, description: string, rate: number,
+  //     imageUrl: string}[]>('/assets/data/product.ts');
+  // }
+
+  detail(product: Product): Observable<Product> {
+    const url = `${this.productObject}/${product.id}`;
     return this.http.get<Product>(url);
   }
 
-   // cart service start
+  // cart service start
   addToCart(product: Product) {
     this.items.push(product);
   }
@@ -37,7 +43,8 @@ export class HomeService {
     this.items = [];
     return this.items;
   }
-// cart service end
+
+  // cart service end
 
   //wishlist services
   addToWishlist(product: Product) {
@@ -52,5 +59,7 @@ export class HomeService {
     this.wishlistItems = [];
     return this.wishlistItems;
   }
+
+  // wishlist services end
 
 }
