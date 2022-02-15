@@ -7,6 +7,7 @@ import {HomePageComponent} from "./pages/home-page/home-page.component";
 import {ProductDescriptionComponent} from "./pages/product-description/product-description.component";
 import {CartComponent} from "./pages/cart/cart.component";
 import {WishlistComponent} from "./pages/wishlist/wishlist.component";
+import {MyProfileComponent} from "./pages/my-profile/my-profile.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       {path: 'productDescription/:productId', component: ProductDescriptionComponent},
       {path: 'cart', component: CartComponent},
       {path: 'wishlist', component: WishlistComponent},
+      {path: 'myProfile', component: MyProfileComponent},
 
     ]
   }

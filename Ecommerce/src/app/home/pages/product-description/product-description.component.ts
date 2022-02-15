@@ -16,12 +16,15 @@ export class ProductDescriptionComponent implements OnInit{
 
   products = products;
 
-
+  key: string = '';
+  value: string = '';
 
   constructor(private homeService: HomeService,
               private activatedRoute: ActivatedRoute,
               private route: ActivatedRoute) {
   }
+
+
 
   ngOnInit() {
     // First get the product id from the current route.
@@ -35,12 +38,17 @@ export class ProductDescriptionComponent implements OnInit{
   }
 
   // move product into shopping cart
+  // addToCart(product: Product) {
+  //   this.homeService.addToCart(product);
+  //   window.alert('Your product has been added to the cart!');
+  // }
   addToCart(product: Product) {
     this.homeService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }
 
   //move products to wishlist
+
   addToWishlist(product: Product) {
     this.homeService.addToWishlist(product);
     window.alert('Your product has been added to the your Wishlist!');

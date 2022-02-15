@@ -30,12 +30,17 @@
             <h5 class="card-title">{{ item.name }}</h5>
             <p class="card-text">{{ item.description }}</p>
             <h5>{{ item.rate | currency:'INR'}}/-</h5>
+            <button class="btn btn-sm btn-danger">
+              <i class="fa fa-trash mr-2"></i>Remove
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <div class="mt-4"></div>
+  </div>
   <div class="col-md-2"></div>
 </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Product, products} from "../../../../assets/data/product";
 
 @Component({
   selector: 'app-header',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  product: Product | any;
+  items = products;
 
   constructor() { }
 

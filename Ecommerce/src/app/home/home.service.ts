@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {Product} from "../../assets/data/product";
+import {Product, products} from "../../assets/data/product";
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,12 @@ export class HomeService {
   // cart service start
   addToCart(product: Product) {
     this.items.push(product);
+
   }
+
+  // addToCart(items: Product[]): Observable<Product> {
+  //   localStorage.setItem(Product);
+  // }
 
   getItems() {
     return this.items;
