@@ -36,13 +36,62 @@ img {
   letter-spacing: 6px;
 }
 
-.textSizingHeading{
-  letter-spacing: 18px;
+.textSizingHeading {
+  letter-spacing: 6px;
   margin-left: 80px;
 }
 
-#editContainer{
+#editContainer {
   width: 100%;
 }
 
 /*end of css for sale card for men*/
+
+/*for sale card for women*/
+#editContainerWomen {
+  background: lightcoral;
+  width: 100%;
+}
+
+#editCategories {
+  background: indianred;
+}
+
+.textSizingWomen {
+  letter-spacing: 6px;
+  background: lightcoral;
+}
+
+#tshirt {
+  background: salmon;
+}
+
+#jeans {
+  background: PaleVioletRed;
+}
+
+#beauty {
+  background: HotPink;
+
+}
+
+#shoes {
+  background: indianred;
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+  .skill-block-women {
+    padding: 40px !important
+  }
+}
+
+@media (min-width: 1200px) {
+  .skill-block-women {
+    padding: 86px !important
+  }
+
+  #womenHeading {
+    background: pink;
+  }
+}
+/*end of css for sale card for women*/
