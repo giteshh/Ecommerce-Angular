@@ -6,6 +6,14 @@
   /*justify-content: stretch;*/
 }
 
+.card {
+  margin-bottom: 30px;
+}
+
+.card .card-body .btn {
+  margin: 0px;
+}
+
 /*for sale card for men*/
 img {
   width: 100%;
@@ -22,6 +30,15 @@ img {
   }
 }
 
+/*css for carousel images responsiveness*/
+@media (max-width: 991px) {
+  .d-block {
+    width: 100%;
+    object-fit: cover;
+
+  }
+}
+
 @media (min-width: 1200px) {
   .skill-block {
     padding: 96px !important
@@ -34,7 +51,7 @@ img {
 
 .textSizingHeading {
   letter-spacing: 6px;
-  margin-left: 80px;
+  /*margin-left: 80px;*/
 }
 
 #editContainer {
@@ -79,11 +96,6 @@ img {
   .skill-block-women {
     padding: 40px !important
   }
-
-  .text-white {
-    overflow-x: auto !important;
-    width: 100% !important;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -94,8 +106,11 @@ img {
   #womenHeading {
     background: pink;
   }
+}
 
-
+.skill-block-scroll {
+  width: 100%;
+  overflow-x: auto;
 }
 
 /*end of css for sale card for women*/
