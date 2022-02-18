@@ -3,7 +3,7 @@
   height: 600px;
   justify-content: center;
   justify-items: center;
-  justify-content: stretch;
+  /*justify-content: stretch;*/
 }
 
 /*for sale card for men*/
@@ -15,10 +15,6 @@ img {
 .bg-black {
   background: white;
 }
-
-/*.skill-block {*/
-/*  width: 100%*/
-/*}*/
 
 @media (min-width: 991px) and (max-width: 1200px) {
   .skill-block {
@@ -83,6 +79,11 @@ img {
   .skill-block-women {
     padding: 40px !important
   }
+
+  .text-white {
+    overflow-x: auto !important;
+    width: 100% !important;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -93,5 +94,8 @@ img {
   #womenHeading {
     background: pink;
   }
+
+
 }
+
 /*end of css for sale card for women*/
