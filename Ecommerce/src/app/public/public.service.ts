@@ -19,7 +19,7 @@ export class PublicService {
   }
 
   token_refresh(formData: any): Observable<any> {
-    return this.httpService.post('/user/token/refresh/', formData);
+    return this.httpService.post('/token/refresh/', formData);
   }
 
 }

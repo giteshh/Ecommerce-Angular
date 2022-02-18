@@ -2,7 +2,7 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const apiUrl = 'http://localhost:8000/apis/v1';
+const apiUrl = 'http://localhost:8000/api';
 const lastUpdatedOn = 'Dec 15, 2021 - 02:15:23 PM';
 const production = false;
 const envName = 'dev';

@@ -20,11 +20,6 @@ export class HomeService {
     return this.http.get<Product[]>(this.productObject);
   }
 
-  // getProducts() {
-  //   return this.http.get<{id: number, name: string, description: string, rate: number,
-  //     imageUrl: string}[]>('/assets/data/product.ts');
-  // }
-
   detail(product: Product): Observable<Product> {
     const url = `${this.productObject}/${product.id}`;
     return this.http.get<Product>(url);
@@ -35,10 +30,6 @@ export class HomeService {
     this.items.push(product);
 
   }
-
-  // addToCart(items: Product[]): Observable<Product> {
-  //   localStorage.setItem(Product);
-  // }
 
   getItems() {
     return this.items;

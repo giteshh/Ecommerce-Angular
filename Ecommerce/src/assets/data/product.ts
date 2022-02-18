@@ -1,4 +1,4 @@
-export interface Product {
+interface Product {
   id: number,
   name: string,
   description: string,
@@ -8,7 +8,7 @@ export interface Product {
 }
 
 
-export const products =
+const products =
   [
     {
       id: 1,
@@ -39,6 +39,11 @@ export const products =
       imageUrl: "/assets/pics/sam.jpg"
     }
   ];
+// console.log(products[0].name);
+// let b = JSON.parse(JSON.stringify(products));
+ JSON.stringify(products);
+// const b = JSON.parse(JSON.stringify(products));
+// JSON.stringify(products);
 
-// var b = JSON.stringify(products);
- var b = JSON.parse(JSON.stringify(products));
+
+export {Product, products}

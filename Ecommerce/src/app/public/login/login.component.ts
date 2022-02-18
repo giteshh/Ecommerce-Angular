@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PublicService} from "../public.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  invalidCredentials = false;
+
+  loginForm: FormGroup = this.formBuilder.group({
+    'email': ['', [Validators.required, Validators.email]],
+    'password': ['', [Validators.required, Validators.minLength(6)]],
+  })
+
+  constructor(private publicService: PublicService,
+              private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(): void {
+    this.publicService.login(this.loginForm.value).subscribe((response) => {
+      // this.sessionService.setSession(response);
+    }, () => {
+      this.invalidCredentials = true;
+    });
+  }
 }
