@@ -11,9 +11,8 @@ import {Product} from "../../../../assets/data/product";
 })
 export class ProductDescriptionComponent implements OnInit {
 
-  // product: Product[] =[];
+  products: Product[] = [];
   product: Product;
-  products: any;
   productId = 0;
 
   constructor(private homeService: HomeService,

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {SessionService} from "../src/app/services/session.service";
+import {SessionService} from "../services/session.service";
 
 
 @Injectable()

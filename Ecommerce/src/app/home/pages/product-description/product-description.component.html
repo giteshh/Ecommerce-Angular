@@ -40,17 +40,16 @@
 
 <h2 class="mt-4 mb-4 ml-4"><b>Similar Products</b></h2>
 
-<!--<div class="row ml-4">-->
-<!--  <div class="col-md-3" *ngFor="let item of product">-->
-<!--    <div class="card" style="width: 16rem;" id="cardHeight">-->
-<!--      <img src="{{ item.image }}" class="card-img-top" id="imgSimilarProducts">-->
-<!--      <div class="card-body">-->
-<!--        <h5 class="card-title">{{ item.title }}</h5>-->
-<!--        <p class="card-text">{{ item.description }}</p>-->
-<!--        <p class="card-text">{{ item.rate | currency:"INR" }}</p>-->
-<!--        <a href="#" class="btn btn-info" >Shop Now</a>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<div class="row ml-4">
+  <div class="col-md-3" *ngFor="let item of products">
+    <div class="card" style="width: 16rem;" id="cardHeight">
+      <img src="{{ item.image }}" class="card-img-top" id="imgSimilarProducts">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.description }}</h5>
+        <p class="card-text">{{ item.rate | currency:"INR" }}</p>
+        <a href="#" class="btn btn-info" >Shop Now</a>
+      </div>
+    </div>
+  </div>
+</div>
 
