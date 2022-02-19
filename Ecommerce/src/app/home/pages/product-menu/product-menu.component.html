@@ -9,8 +9,8 @@
         <img src="{{product.image}}" class="img-thumbnail" alt="Responsive image"/>
       </div>
       <div class="card-body">
-<!--        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>-->
-        <p class="elipsis">{{product.description}}</p>
+        <!--        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>-->
+        <h5 class="elipsis">{{product.description}}</h5>
         <h6 class="text-center"><b>Price:</b> {{product.rate | currency:'INR' }}/-</h6>
         <a class="btn btn-sm btn-primary ml-4" routerLink="/home/productDescription/{{product.id}}"
            data-toggle="tooltip" data-placement="bottom" title="View product description">
@@ -25,6 +25,30 @@
 </div>
 <!--end of product 1 menu-->
 
+<!--dummy products-->
+<div class="row mt-5" *ngFor="let number of numSequence(4)">
+  <div class="col-md-2"></div>
+  <div class="col-md-2" *ngFor="let number of numSequence(4)">
+    <div class="card mb-5">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img src="/assets/pics/dummy.jpg" class="img-thumbnail" alt="Responsive image"/>
+      </div>
+      <div class="card-body">
+        <!--        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>-->
+        <p class="elipsis">product description</p>
+        <h6 class="text-center"><b>Price:</b> xx,xxx /-</h6>
+        <a class="btn btn-sm btn-primary ml-4 disabled"
+           data-toggle="tooltip" data-placement="bottom" aria-disabled="true" title="View product description">
+          <i class="fa fa-eye fa-lg"></i></a>
+        <a class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true" data-toggle="tooltip"
+           data-placement="bottom" title="Add to Wishlist">
+          <i class="fa fa-heart fa-lg"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<!--end of dummy products-->
 <!--pagination-->
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center mt-4">

@@ -12,26 +12,26 @@ import {Product} from "../../../../assets/data/product";
 export class ProductDescriptionComponent implements OnInit {
 
   // product: Product[] =[];
-  product: Product | any;
-
-  key: string = '';
-  value: string = '';
+  product: Product;
+  products: any;
+  productId = 0;
 
   constructor(private homeService: HomeService,
               private activatedRoute: ActivatedRoute,
               private route: ActivatedRoute) {
+
+    this.product = this.homeService.product;
+    this.activatedRoute.params.subscribe((params) => {
+      this.productId = params['productId'];
+      this.homeService.detail(this.productId).subscribe(product => {
+        this.product = product;
+      });
+    });
+
   }
 
-
   ngOnInit() {
-    // First get the product id from the current route.
-    const routeParams = this.route.snapshot.paramMap;
-    const productIdFromRoute = Number(routeParams.get('productId'));
 
-    // Find the product that correspond with the id provided in route.
-    // this.product = product.find(product => product.id === productIdFromRoute);
-
-    // this.homeService.getProducts().subscribe(data => this.products = data);
   }
 
   // move product into shopping cart
@@ -39,16 +39,6 @@ export class ProductDescriptionComponent implements OnInit {
     this.homeService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }
-
-  // addToCart(product: Product) {
-  //   this.homeService.addToCart(product);
-  //   window.alert('Your product has been added to the cart!');
-  // }
-
-  // addToCart(product: Product) {
-  //   this.homeService.addToCartNew(product);
-  //   window.alert('Your product has been added to the cart!');
-  // }
 
   //move products to wishlist
   addToWishlist(product: Product) {

@@ -13,6 +13,13 @@ export class HomeService {
 
   items: Product[] = [];
   wishlistItems: Product[] = [];
+  product: Product = {
+    id: 0,
+    image: "",
+    description: '',
+    rate: 0,
+    quantity: 0
+  };
 
   constructor(private http: HttpClient,
               private httpService: HttpService) {
@@ -26,9 +33,14 @@ export class HomeService {
     return this.httpService.get('/productlist/productlist/');
   }
 
-  detail(product: Product): Observable<Product> {
-    const url = `${this.productObject}/${product.id}`;
-    return this.http.get<Product>(url);
+  // detail(product: Product): Observable<Product> {
+  //   const url = `${this.productObject}/${product.id}`;
+  //   return this.http.get<Product>(url);
+  // }
+
+  detail(id: number): Observable<Product> {
+    const url = this.httpService.getDetailUrl('/productlist/productlist/', id);
+    return this.httpService.get(url);
   }
 
   // cart service start
