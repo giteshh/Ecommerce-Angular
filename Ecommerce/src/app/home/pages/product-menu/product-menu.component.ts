@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
-import {Product, products} from "../../../../assets/data/product";
+import {Product} from "../../../../assets/data/product";
 
 @Component({
   selector: 'app-product-menu',
@@ -9,7 +9,7 @@ import {Product, products} from "../../../../assets/data/product";
 })
 export class ProductMenuComponent implements OnInit {
 
-  products = products;
+  products : Product[]=[];
 
   constructor(private homeService: HomeService) {
   }

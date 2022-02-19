@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Product, products} from "../../../../assets/data/product";
+import {Product} from "../../../../assets/data/product";
 import {HomeService} from "../../home.service";
 
 @Component({
@@ -9,8 +9,8 @@ import {HomeService} from "../../home.service";
 })
 export class HeaderComponent implements OnInit {
 
-  product: Product | any;
-  items = products;
+  product: Product[]=[];
+  // items = products;
   totalItemsInCart = 0;
 
   constructor(private homeService: HomeService) {

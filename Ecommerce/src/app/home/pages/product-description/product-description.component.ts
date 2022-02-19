@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
 import {ActivatedRoute} from "@angular/router";
-import {Product, products} from "../../../../assets/data/product";
-
+import {Product} from "../../../../assets/data/product";
 
 
 @Component({
@@ -10,11 +9,10 @@ import {Product, products} from "../../../../assets/data/product";
   templateUrl: './product-description.component.html',
   styleUrls: ['./product-description.component.css']
 })
-export class ProductDescriptionComponent implements OnInit{
+export class ProductDescriptionComponent implements OnInit {
 
+  // product: Product[] =[];
   product: Product | any;
-
-  products = products;
 
   key: string = '';
   value: string = '';
@@ -25,30 +23,34 @@ export class ProductDescriptionComponent implements OnInit{
   }
 
 
-
   ngOnInit() {
     // First get the product id from the current route.
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = Number(routeParams.get('productId'));
 
     // Find the product that correspond with the id provided in route.
-    this.product = products.find(product => product.id === productIdFromRoute);
+    // this.product = product.find(product => product.id === productIdFromRoute);
 
     // this.homeService.getProducts().subscribe(data => this.products = data);
   }
 
   // move product into shopping cart
-  // addToCart(product: Product) {
-  //   this.homeService.addToCart(product);
-  //   window.alert('Your product has been added to the cart!');
-  // }
   addToCart(product: Product) {
     this.homeService.addToCart(product);
     window.alert('Your product has been added to the cart!');
   }
 
-  //move products to wishlist
+  // addToCart(product: Product) {
+  //   this.homeService.addToCart(product);
+  //   window.alert('Your product has been added to the cart!');
+  // }
 
+  // addToCart(product: Product) {
+  //   this.homeService.addToCartNew(product);
+  //   window.alert('Your product has been added to the cart!');
+  // }
+
+  //move products to wishlist
   addToWishlist(product: Product) {
     this.homeService.addToWishlist(product);
     window.alert('Your product has been added to the your Wishlist!');

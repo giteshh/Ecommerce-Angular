@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HomeService} from "../../home.service";
-import {products} from "../../../../assets/data/product";
+import {Product} from "../../../../assets/data/product";
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +9,7 @@ import {products} from "../../../../assets/data/product";
 })
 export class CartComponent implements OnInit {
 
-  product: any = products;
+  product:Product[]=[];
   items = this.homeService.getItems();
   id = 0;
 

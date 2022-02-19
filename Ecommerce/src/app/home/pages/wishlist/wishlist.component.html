@@ -22,13 +22,13 @@
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row g-0">
         <div class="col-md-4">
-          <img src="{{ product.imageUrl }}" class="img-fluid rounded-start" style="border: 1px solid black">
+          <img src="{{ product.image }}" class="img-fluid rounded-start" style="border: 1px solid black">
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h4 class="card-title">{{ product.name }}</h4>
+            <h4 class="card-title">{{ product.title }}</h4>
             <p class="card-text">{{ product.description }}</p>
-            <h3 class="card-text text-muted">{{ product.rate | currency:"INR" }}</h3>
+            <h3 class="card-text text-muted">{{ product.price | currency:"INR" }}</h3>
           </div>
         </div>
       </div>

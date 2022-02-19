@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {Product, products} from "../../assets/data/product";
+import {Product} from "../../assets/data/product";
+import {HttpService} from "../services/http.service";
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,16 @@ export class HomeService {
   items: Product[] = [];
   wishlistItems: Product[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private httpService: HttpService) {
   }
 
-  getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productObject);
+  // getProducts(): Observable<Product[]> {
+  //   return this.http.get<Product[]>(this.productObject);
+  // }
+
+  getProducts(): Observable<any> {
+    return this.http.get('https://fakestoreapi.com/products');
   }
 
   detail(product: Product): Observable<Product> {
@@ -29,6 +35,10 @@ export class HomeService {
   addToCart(product: Product) {
     this.items.push(product);
 
+  }
+
+  addToCartNew(product: Product): Observable<Product> {
+    return this.httpService.post('/cart/', product);
   }
 
   getItems() {
