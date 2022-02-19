@@ -17,9 +17,9 @@
       <div class="col-md-4">
         <div class="card" style="width: 25rem; height: 25rem">
           <div class="card-body">
-            <h3 class="mt-4 pt-5"><b>{{ product.title }}</b></h3>
+<!--            <h3 class="mt-4 pt-5"><b>{{ product.title }}</b></h3>-->
             <p class="mt-4 pt-3">{{ product.description }}</p>
-            <h4 class="mt-4 pt-5">{{ product.price | currency:'INR' }}</h4>
+            <h4 class="mt-4 pt-5">{{ product.rate | currency:'INR' }}</h4>
             <div class="mt-4">
               <button class="btn btn-md btn-primary" (click)="addToCart(product)">
                 <i class="fa fa-shopping-cart mr-2"></i>Add to Cart

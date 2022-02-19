@@ -23,7 +23,7 @@ export class HomeService {
   // }
 
   getProducts(): Observable<any> {
-    return this.http.get('https://fakestoreapi.com/products');
+    return this.httpService.get('/productlist/productlist/');
   }
 
   detail(product: Product): Observable<Product> {

@@ -1,12 +1,11 @@
 interface Product {
   id: number,
-  title: string,
-  price: number,
+  rate: number,
   description: string,
-  category: string,
   image: string,
-  rating: string
+  quantity: number,
 }
+
 // Product taken from fakestore api
 
 export {Product}

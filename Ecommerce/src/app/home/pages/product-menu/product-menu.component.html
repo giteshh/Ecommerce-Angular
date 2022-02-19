@@ -9,9 +9,9 @@
         <img src="{{product.image}}" class="img-thumbnail" alt="Responsive image"/>
       </div>
       <div class="card-body">
-        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>
+<!--        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>-->
         <p class="elipsis">{{product.description}}</p>
-        <h6 class="text-center"><b>Price:</b> {{product.price | currency:'INR' }}/-</h6>
+        <h6 class="text-center"><b>Price:</b> {{product.rate | currency:'INR' }}/-</h6>
         <a class="btn btn-sm btn-primary ml-4" routerLink="/home/productDescription/{{product.id}}"
            data-toggle="tooltip" data-placement="bottom" title="View product description">
           <i class="fa fa-eye fa-lg"></i></a>
