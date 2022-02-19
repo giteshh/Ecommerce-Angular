@@ -7,3 +7,9 @@
 #cardHeight {
   height: 450px;
 }
+
+.elipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

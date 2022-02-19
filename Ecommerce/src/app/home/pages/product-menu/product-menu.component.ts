@@ -9,13 +9,14 @@ import {Product} from "../../../../assets/data/product";
 })
 export class ProductMenuComponent implements OnInit {
 
-  products : Product[]=[];
+  products: Product[] = [];
 
   constructor(private homeService: HomeService) {
+    this.homeService.getProducts().subscribe(data => this.products = data);
   }
 
   ngOnInit(): void {
-    this.homeService.getProducts().subscribe(data => this.products = data);
+
   }
 
   //move products to wishlist

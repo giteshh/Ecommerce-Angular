@@ -4,13 +4,13 @@
 <div class="row mt-5">
   <div class="col-md-2"></div>
   <div class="col-md-2" *ngFor="let product of products">
-    <div class="card" id="cardHeight">
+    <div class="card mb-5" id="cardHeight">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
         <img src="{{product.image}}" class="img-thumbnail" alt="Responsive image"/>
       </div>
       <div class="card-body">
-        <h5 class="text-center"><b>{{product.title}}</b></h5>
-        <p>{{product.description}}</p>
+        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>
+        <p class="elipsis">{{product.description}}</p>
         <h6 class="text-center"><b>Price:</b> {{product.price | currency:'INR' }}/-</h6>
         <a class="btn btn-sm btn-primary ml-4" routerLink="/home/productDescription/{{product.id}}"
            data-toggle="tooltip" data-placement="bottom" title="View product description">
@@ -21,33 +21,9 @@
       </div>
     </div>
   </div>
+  <div class="col-md-2"></div>
 </div>
 <!--end of product 1 menu-->
-
-<!--product menu 2 (dummy products) start-->
-<div class="row mt-5" *ngFor="let n of numSequence(4); let i = index;">
-  <div class="col-md-2"></div>
-  <div class="col-md-2" *ngFor="let n of numSequence(4); let i = index;">
-    <div class="card">
-      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-        <img src="/assets/pics/ip.jpg" class="img-thumbnail" alt="Responsive image"/>
-      </div>
-      <div class="card-body">
-        <h5 class="text-center"><b>Product Name</b></h5>
-        <p>Some description of product</p>
-        <h6 class="text-center"><b>Price:</b> xx,xxx /-</h6>
-        <a class="btn btn-sm btn-primary ml-4 disabled"
-           data-toggle="tooltip" data-placement="bottom" title="View product description" aria-disabled="true">
-          <i class="fa fa-eye fa-lg"></i></a>
-        <a class="btn btn-sm btn-danger ml-2 disabled" data-toggle="tooltip" data-placement="bottom"
-           title="Add to Wishlist"
-           aria-disabled="true">
-          <i class="fa fa-heart fa-lg"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
-<!--end of product 2 (dummy products)menu-->
 
 <!--pagination-->
 <nav aria-label="Page navigation example">

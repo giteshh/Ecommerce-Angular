@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Product} from "../../../../assets/data/product";
 import {HomeService} from "../../home.service";
+import {PublicService} from "../../../public/public.service";
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   // items = products;
   totalItemsInCart = 0;
 
-  constructor(private homeService: HomeService) {
+  constructor(private homeService: HomeService,
+              private publicService: PublicService) {
 
   }
 
@@ -22,6 +24,10 @@ export class HeaderComponent implements OnInit {
       console.log(response);
       this.totalItemsInCart = response.length;
     })
+  }
+
+  logout(){
+    this.publicService.logout();
   }
 
 }

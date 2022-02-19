@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpService} from "../services/http.service";
 import {Observable} from "rxjs";
 import {TokenResponseInterface, UserInterface} from "./public.interface";
+import {SessionService} from "../services/session.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class PublicService {
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService,
+              private sessionService: SessionService) {
+  }
 
   register(formData: UserInterface): Observable<TokenResponseInterface> {
     return this.httpService.post('/user/user-auth/register/', formData);
@@ -20,6 +23,10 @@ export class PublicService {
 
   token_refresh(formData: any): Observable<any> {
     return this.httpService.post('/token/refresh/', formData);
+  }
+
+  logout() {
+    this.sessionService.endSession();
   }
 
 }

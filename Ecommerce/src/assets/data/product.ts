@@ -7,5 +7,6 @@ interface Product {
   image: string,
   rating: string
 }
+// Product taken from fakestore api
 
 export {Product}
