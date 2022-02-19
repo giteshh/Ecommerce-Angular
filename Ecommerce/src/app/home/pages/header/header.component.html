@@ -1,23 +1,24 @@
 <!--Navbar -->
 <nav class="nav aqua-gradient navbar navbar-expand-lg py-2 mb-0 font-weight-light z-depth-1">
-  <a class="navbar-brand white-text font-weight-light" routerLink="/home/Home">V A S T R A H U N T </a>
+  <a class="navbar-brand text-dark font-weight-light" routerLink="/home/Home"><b>V A S T R A H U N T</b> </a>
   <!--    <img width="50" height="50" src="\assets\pics\logo2.png">-->
 
-  <button class="navbar-toggle btn btn-sm btn-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+  <button class="navbar-toggle btn btn-sm btn-light" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent-333"
           aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-<!--    <span class="navbar-toggle-icon"></span>-->
+    <!--    <span class="navbar-toggle-icon"></span>-->
     <span>
       <i class="fa fa-lg fa-bars"></i>
     </span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-    <ul class="navbar-nav mr-auto white-text">
+    <ul class="navbar-nav mr-auto text-white">
       <li class="nav-item ">
         <a class="nav-link disabled" data-toggle="tooltip" data-placement="bottom" title="Shoes">
           <i class="fa fa-shoe-prints mr-2"></i>Shoes</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link white-text button" routerLink="/home/productMenu" data-toggle="tooltip"
+        <a class="nav-link text-white button" routerLink="/home/productMenu" data-toggle="tooltip"
            data-placement="bottom" title="Mobile">
           <i class="fa fa-mobile mr-2"></i>Mobiles</a>
       </li>
@@ -37,10 +38,10 @@
     <ul class="navbar-nav ml-auto nav-flex-icons">
       <form class="form-inline">
         <div class="md-form my-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <input class="form-control mr-sm-" type="text" placeholder="Search" aria-label="Search">
         </div>
       </form>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown text-white">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
            aria-haspopup="true" aria-expanded="false" data-placement="bottom" title="My-Profile">
           <i class="fas fa-user"></i>
@@ -54,13 +55,13 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" routerLink="/home/wishlist" data-toggle="tooltip"
+        <a class="nav-link waves-effect waves-light text-white" routerLink="/home/wishlist" data-toggle="tooltip"
            data-placement="bottom" title="Wishlist">
           <i class="fa fa-heart"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" routerLink="/home/cart" data-toggle="tooltip"
+        <a class="nav-link waves-effect waves-light text-white" routerLink="/home/cart" data-toggle="tooltip"
            data-placement="bottom" title="Cart">
           <i class="fa fa-shopping-cart"></i>
           <span class="badge rounded-pill badge-notification bg-danger">{{totalItemsInCart}}</span>

@@ -1,9 +1,7 @@
 .d-block {
-  width: 1800px;
+  width: 1600px;
   height: 600px;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
+  margin-left: 50px;
 }
 
 .card {

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from "../../../../assets/data/product";
 import {HomeService} from "../../home.service";
 import {PublicService} from "../../../public/public.service";
+import {SessionService} from "../../../services/session.service";
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
   totalItemsInCart = 0;
 
   constructor(private homeService: HomeService,
-              private publicService: PublicService) {
+              private publicService: PublicService,
+              private sessionService: SessionService) {
 
   }
 
@@ -28,6 +30,10 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.publicService.logout();
+  }
+
+  isSessionExist(){
+    this.sessionService.isSessionExist();
   }
 
 }
