@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PublicService} from "../public.service";
+import {SessionService} from "../../services/session.service";
 
 @Component({
   selector: 'app-register',
@@ -18,12 +19,13 @@ export class RegisterComponent {
   })
 
   constructor(private publicService: PublicService,
-              private formBuilder: FormBuilder) {
+              private formBuilder: FormBuilder,
+              private sessionService: SessionService) {
   }
 
   onSubmit(): void {
     this.publicService.register(this.registerForm.value).subscribe((response) => {
-      // this.sessionService.setSession(response);
+      this.sessionService.setSession(response);
     }, () => {
       this.invalidCredentials = true;
     });

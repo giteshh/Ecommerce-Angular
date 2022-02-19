@@ -9,6 +9,7 @@ import { ProductDescriptionComponent } from './pages/product-description/product
 import { CartComponent } from './pages/cart/cart.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { MyProfileComponent } from './pages/my-profile/my-profile.component';
+import {FooterComponent} from "./pages/footer/footer.component";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MyProfileComponent } from './pages/my-profile/my-profile.component';
     CartComponent,
     WishlistComponent,
     MyProfileComponent,
+    FooterComponent
 
 
   ],

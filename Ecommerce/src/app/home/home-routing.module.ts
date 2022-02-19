@@ -8,6 +8,7 @@ import {ProductDescriptionComponent} from "./pages/product-description/product-d
 import {CartComponent} from "./pages/cart/cart.component";
 import {WishlistComponent} from "./pages/wishlist/wishlist.component";
 import {MyProfileComponent} from "./pages/my-profile/my-profile.component";
+import {FooterComponent} from "./pages/footer/footer.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       {path: '', redirectTo: 'Home', pathMatch: 'full'},
       {path: 'Home', component: HomePageComponent},
       {path: 'header', component: HeaderComponent},
+      {path: 'footer', component: FooterComponent},
       {path: 'productMenu', component: ProductMenuComponent},
       {path: 'productDescription/:productId', component: ProductDescriptionComponent},
       {path: 'cart', component: CartComponent},
