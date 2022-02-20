@@ -43,14 +43,23 @@ export class HomeService {
     return this.httpService.get(url);
   }
 
-  // cart service start
-  addToCart(product: Product) {
-    this.items.push(product);
-
+  getCartItemList(): Observable<any> {
+    return this.httpService.get('/cart/cart/');
   }
 
-  addToCartNew(product: Product): Observable<Product> {
-    return this.httpService.post('/cart/', product);
+  // cart service start
+  // addToCart(product: Product) {
+  //   this.items.push(product);
+  //
+  // }
+
+  addToCart(product: Product): Observable<Product> {
+    return this.httpService.post('/cart/cart/', product);
+  }
+
+  detailCart(id: number): Observable<Product> {
+    const url = this.httpService.getDetailUrl('/cart/cart/', id);
+    return this.httpService.get(url);
   }
 
   getItems() {

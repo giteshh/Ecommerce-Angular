@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
 import {Product} from "../../../../assets/data/product";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-cart',
@@ -9,23 +10,32 @@ import {Product} from "../../../../assets/data/product";
 })
 export class CartComponent implements OnInit {
 
-  product:Product[]=[];
+  product: Product[] = [];
   items = this.homeService.getItems();
-  id = 0;
 
   constructor(private homeService: HomeService) {
+    this.getCartList();
 
+    // this.setCartItem(this.product);
   }
+
 
   ngOnInit(): void {
   }
 
-  clearCart(){
+  // setCartItem(product: any): void {
+  //   localStorage.setItem('product', product);
+  // }
+
+  getCartList(): void {
+    this.homeService.getCartItemList().subscribe((response) => {
+      console.log(response)
+      this.product = response;
+    });
+  }
+
+  clearCart() {
     this.homeService.clearCart();
   }
 
-  // delete a specific item from cart
-  // delete(id: number) {
-  //   this.product = this.product.filter((item: { id: number; }) => item.id !== id);
-  // }
 }

@@ -3,7 +3,6 @@ import {HomeService} from "../../home.service";
 import {ActivatedRoute} from "@angular/router";
 import {Product} from "../../../../assets/data/product";
 
-
 @Component({
   selector: 'app-product-description',
   templateUrl: './product-description.component.html',
@@ -16,8 +15,7 @@ export class ProductDescriptionComponent implements OnInit {
   productId = 0;
 
   constructor(private homeService: HomeService,
-              private activatedRoute: ActivatedRoute,
-              private route: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute) {
 
     this.product = this.homeService.product;
     this.activatedRoute.params.subscribe((params) => {
