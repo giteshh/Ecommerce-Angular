@@ -43,23 +43,28 @@ export class HomeService {
     return this.httpService.get(url);
   }
 
-  getCartItemList(): Observable<any> {
-    return this.httpService.get('/cart/cart/');
-  }
-
-  // cart service start
-  // addToCart(product: Product) {
-  //   this.items.push(product);
-  //
+  // getCartItemList(): Observable<any> {
+  //   return this.httpService.get('/cart/cart/');
   // }
 
-  addToCart(product: Product): Observable<Product> {
-    return this.httpService.post('/cart/cart/', product);
+  // cart service start
+  addToCart(product: Product) {
+    this.items.push(product);
+
   }
+
+  // with backend api
+  // addToCart(product: Product): Observable<Product> {
+  //   return this.httpService.post('/cart/cart/', product);
+  // }
 
   detailCart(id: number): Observable<Product> {
     const url = this.httpService.getDetailUrl('/cart/cart/', id);
     return this.httpService.get(url);
+  }
+
+  removeItem(index: number) {
+    this.items.splice(index, 1);
   }
 
   getItems() {
@@ -82,9 +87,8 @@ export class HomeService {
     return this.wishlistItems;
   }
 
-  clearWishlist() {
-    this.wishlistItems = [];
-    return this.wishlistItems;
+  removeWishlistItem(index: number){
+    this.items.splice(index, 1);
   }
 
   // wishlist services end

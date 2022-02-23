@@ -4,6 +4,7 @@
   margin-left: 50px;
 }
 
+
 .card {
   margin-bottom: 30px;
 }
@@ -33,6 +34,7 @@ img {
   .d-block {
     width: 100%;
     object-fit: cover;
+    margin: 0px;
 
   }
 }
@@ -50,6 +52,7 @@ img {
 .textSizingHeading {
   letter-spacing: 6px;
   /*margin-left: 80px;*/
+  text-align: center;
 }
 
 #editContainer {

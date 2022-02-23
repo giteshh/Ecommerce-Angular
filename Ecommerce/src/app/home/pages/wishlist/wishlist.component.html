@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="row mt-4" *ngFor="let product of wishListItems">
+<div class="row mt-4" *ngFor="let product of wishListItems, let i = index">
   <div class="col-md-4"></div>
   <div class="col-md-8">
     <div class="card mb-3" style="max-width: 540px;">
@@ -26,9 +26,11 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-<!--            <h4 class="card-title">{{ product.title }}</h4>-->
+            <!--            <h4 class="card-title">{{ product.title }}</h4>-->
             <p class="card-text">{{ product.description }}</p>
             <h3 class="card-text text-muted">{{ product.rate | currency:"INR" }}</h3>
+            <button class="btn btn-sm btn-danger" (click)="removeWishlistItem(i)">
+              <i class="fa fa-trash"></i></button>
           </div>
         </div>
       </div>

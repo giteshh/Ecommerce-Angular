@@ -21,6 +21,11 @@ export class WishlistComponent implements OnInit {
   }
 
   onClearWishlist(){
-    this.homeService.clearWishlist();
+    window.alert('Saved items will be removed from Wishlist. Are you sure ?');
+    this.wishListItems = [];
+  }
+
+  removeWishlistItem(index: number) {
+    this.homeService.removeWishlistItem(index);
   }
 }

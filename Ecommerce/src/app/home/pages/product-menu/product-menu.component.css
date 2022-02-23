@@ -13,3 +13,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.button-row{
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#rippleImg{
+  margin: 0 auto;
+}
+
+#rippleImg2{
+  margin: 0 auto;
+}
