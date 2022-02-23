@@ -2,8 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from "../../../../assets/data/product";
 import {HomeService} from "../../home.service";
 import {PublicService} from "../../../public/public.service";
-import {SessionService} from "../../../services/session.service";
-import {UserInterface} from "../../../public/public.interface";
+import {FirebaseService} from "../../../services/firebase.service";
 
 @Component({
   selector: 'app-header',
@@ -14,12 +13,10 @@ export class HeaderComponent implements OnInit {
 
   // product: Product[]=[];
   totalItemsInCart = 0;
-  user: UserInterface[] = [];
-  isUserLogin = false;
 
   constructor(private homeService: HomeService,
-              private publicService: PublicService) {
-
+              private publicService: PublicService,
+              private firebaseService: FirebaseService) {
   }
 
   ngOnInit(): void {
@@ -27,6 +24,6 @@ export class HeaderComponent implements OnInit {
   }
 
   logout() {
-    this.publicService.logout();
+    this.firebaseService.signout();
   }
 }

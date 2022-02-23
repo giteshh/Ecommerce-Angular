@@ -1,11 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { PublicRoutingModule } from './public-routing.module';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import {ReactiveFormsModule} from "@angular/forms";
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {PublicRoutingModule} from './public-routing.module';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,7 +13,9 @@ import {ReactiveFormsModule} from "@angular/forms";
   imports: [
     CommonModule,
     PublicRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
-export class PublicModule { }
+export class PublicModule {
+}

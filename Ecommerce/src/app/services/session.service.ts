@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {TokenResponseInterface, UserInterface} from "../public/public.interface";
 import {Router} from "@angular/router";
+import {TokenResponseInterface, UserInterface} from "../public/public.interface";
 
 @Injectable({
   providedIn: 'root'

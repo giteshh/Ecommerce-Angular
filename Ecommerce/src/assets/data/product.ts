@@ -6,6 +6,4 @@ interface Product {
   quantity: number,
 }
 
-// Product taken from fakestore api
-
 export {Product}
