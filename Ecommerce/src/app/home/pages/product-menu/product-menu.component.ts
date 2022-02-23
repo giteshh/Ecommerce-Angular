@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
-import {Product} from "../../../../assets/data/product";
+import {products, Product} from "../../../../assets/data/product";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-product-menu',
@@ -9,14 +10,16 @@ import {Product} from "../../../../assets/data/product";
 })
 export class ProductMenuComponent implements OnInit {
 
-  products: Product[] = [];
+  products = products;
 
-  constructor(private homeService: HomeService) {
-    this.homeService.getProducts().subscribe(data => this.products = data);
+
+  constructor(private homeService: HomeService,
+              private http: HttpClient) {
   }
 
   ngOnInit(): void {
-
+    // this.homeService.getProducts().subscribe(data => this.products = data);
+    // this.http.get('/assets/data/product.ts').subscribe(products => this.products = products)
   }
 
   //move products to wishlist
@@ -30,3 +33,4 @@ export class ProductMenuComponent implements OnInit {
     return Array(n);
   }
 }
+

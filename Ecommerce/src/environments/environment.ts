@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8000/';
+const apiUrl = "http://localhost:8000/";
 const lastUpdatedOn = 'Dec 15, 2021 - 02:15:23 PM';
 const production = false;
 const envName = 'dev';

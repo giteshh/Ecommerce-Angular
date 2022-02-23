@@ -19,7 +19,7 @@
           <div class="card-body">
 <!--            <h3 class="mt-4 pt-5"><b>{{ product.title }}</b></h3>-->
             <h2 class="mt-4 pt-3">{{ product.description }}</h2>
-            <h4 class="mt-4 pt-5">{{ product.rate | currency:'INR' }}</h4>
+            <h4 class="mt-4 pt-5">{{ product.price | currency:'INR' }}</h4>
             <div class="mt-4">
               <button class="btn btn-md btn-primary" (click)="addToCart(product)">
                 <i class="fa fa-shopping-cart mr-2"></i>Add to Cart
@@ -40,16 +40,16 @@
 
 <h2 class="mt-4 mb-4 ml-4"><b>Similar Products</b></h2>
 
-<div class="row ml-4">
-  <div class="col-md-3" *ngFor="let item of products">
-    <div class="card" style="width: 16rem;" id="cardHeight">
-      <img src="{{ item.image }}" class="card-img-top" id="imgSimilarProducts">
-      <div class="card-body">
-        <h2 class="card-title">{{ item.description }}</h2>
-        <p class="card-text">{{ item.rate | currency:"INR" }}</p>
-        <a href="#" class="btn btn-info" >Shop Now</a>
-      </div>
-    </div>
-  </div>
-</div>
+<!--<div class="row ml-4">-->
+<!--  <div class="col-md-3" *ngFor="let item of products">-->
+<!--    <div class="card" style="width: 16rem;" id="cardHeight">-->
+<!--      <img src="{{ item.image }}" class="card-img-top" id="imgSimilarProducts">-->
+<!--      <div class="card-body">-->
+<!--        <h2 class="card-title">{{ item.description }}</h2>-->
+<!--        <p class="card-text">{{ item.rate | currency:"INR" }}</p>-->
+<!--        <a href="#" class="btn btn-info" >Shop Now</a>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 

@@ -11,7 +11,7 @@
       <div class="card-body">
         <!--        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>-->
         <h5 class="elipsis text-center"><b>{{product.description}}</b></h5>
-        <h6 class="text-center"><b>Price:</b> {{product.rate | currency:'INR' }}/-</h6>
+        <h6 class="text-center"><b>Price:</b> {{product.price | currency:'INR' }}/-</h6>
         <div class="button-row">
           <a class="btn btn-sm btn-primary" routerLink="/home/productDescription/{{product.id}}"
              data-toggle="tooltip" data-placement="bottom" title="View product description">

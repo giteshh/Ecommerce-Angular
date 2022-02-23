@@ -29,7 +29,7 @@
           <div class="card-body">
             <!--            <h5 class="card-title">{{ item.title }}</h5>-->
             <p class="card-text">{{ item.description }}</p>
-            <h5>{{ item.rate | currency:'INR'}}/-</h5>
+            <h5>{{ item.price | currency:'INR'}}/-</h5>
             <button class="btn btn-sm btn-danger" (click)="removeCartItem(i)">
               <i class="fa fa-trash mr-2"></i>Remove
             </button>

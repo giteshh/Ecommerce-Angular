@@ -11,7 +11,7 @@ import {FirebaseService} from "../../../services/firebase.service";
 })
 export class HeaderComponent implements OnInit {
 
-  // product: Product[]=[];
+  product: Product[]=[];
   totalItemsInCart = 0;
 
   constructor(private homeService: HomeService,

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
 import {ActivatedRoute} from "@angular/router";
-import {Product} from "../../../../assets/data/product";
+import {Product, products} from "../../../../assets/data/product";
 
 @Component({
   selector: 'app-product-description',
@@ -10,25 +10,23 @@ import {Product} from "../../../../assets/data/product";
 })
 export class ProductDescriptionComponent implements OnInit {
 
-  products: Product[] = [];
-  product: Product;
+  product: Product | any;
+  items = products ;
   productId = 0;
+  products = products;
 
   constructor(private homeService: HomeService,
-              private activatedRoute: ActivatedRoute) {
-
-    this.product = this.homeService.product;
-    this.activatedRoute.params.subscribe((params) => {
-      this.productId = params['productId'];
-      this.homeService.detail(this.productId).subscribe(product => {
-        this.product = product;
-      });
-    });
-
+              private activatedRoute: ActivatedRoute,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    // First get the product id from the current route.
+    const routeParams = this.route.snapshot.paramMap;
+    const productIdFromRoute = Number(routeParams.get('productId'));
 
+    // Find the product that correspond with the id provided in route.
+    this.product = products.find(product => product.id === productIdFromRoute);
   }
 
   // move product into shopping cart
@@ -44,4 +42,6 @@ export class ProductDescriptionComponent implements OnInit {
   }
 
 }
+
+
 
