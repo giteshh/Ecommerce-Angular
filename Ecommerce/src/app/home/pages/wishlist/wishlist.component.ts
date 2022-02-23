@@ -25,7 +25,13 @@ export class WishlistComponent implements OnInit {
     this.wishListItems = [];
   }
 
-  removeWishlistItem(index: number) {
-    this.homeService.removeWishlistItem(index);
+  removeItem(index: number) {
+    this.homeService.removeItem(index);
+  }
+
+  addToCart(product: Product) {
+    this.homeService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
+    this.homeService.removeItem(1);
   }
 }

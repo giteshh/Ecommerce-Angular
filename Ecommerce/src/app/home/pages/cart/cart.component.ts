@@ -25,4 +25,10 @@ export class CartComponent {
     this.homeService.removeItem(index);
   }
 
+  //move products to wishlist
+  addToWishlist(product: Product) {
+    this.homeService.addToWishlist(product);
+    window.alert('Your product has been added to the your Wishlist!');
+  }
+
 }
