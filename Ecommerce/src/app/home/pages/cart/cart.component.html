@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row m-0">
   <div class="col-md-2"></div>
   <div class="col-md-4">
     <div class="card mb-3" style="max-width: 540px;" *ngFor="let item of items, let i = index">
@@ -26,11 +26,11 @@
           <img src="{{ item.image }}" class="card-img" alt="...">
         </div>
         <div class="col-md-8">
-          <div class="card-body">
-            <!--            <h5 class="card-title">{{ item.title }}</h5>-->
-            <p class="card-text">{{ item.description }}</p>
+          <div class="card-body" id="cardBody-mobile">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p>{{ item.description }}</p>
             <h5>{{ item.price | currency:'INR'}}/-</h5>
-            <button class="btn btn-sm btn-danger" (click)="removeCartItem(i)">
+            <button class="btn btn-sm btn-danger m-0" (click)="removeCartItem(i)">
               <i class="fa fa-trash mr-2"></i>Remove
             </button>
             <button class="btn btn-sm btn-primary" (click)="addToWishlist(item)">Move To Wishlist</button>
@@ -40,7 +40,18 @@
     </div>
   </div>
   <div class="col-md-4">
-    <div class="mt-4"></div>
+    <div class="total-cart-mobile">
+      <div class="card" *ngIf="items.length">
+        <div class="card-body">
+                    <h6>Mrp: <s></s></h6>
+                    <h6>Final Price:</h6>
+                    <h6>Discount: </h6>
+          <h6>Transportation Charge: <s>80</s>/- Free</h6>
+          <hr>
+          <h5>Total Amount: {{cartItemTotal}}</h5>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-md-2"></div>
 </div>

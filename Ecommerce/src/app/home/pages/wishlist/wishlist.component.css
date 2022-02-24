@@ -2,6 +2,31 @@
   margin-top: 200px;
 }
 
-#heartIconColor{
+#heartIconColor {
   color: red;
+}
+
+.wishlist-container {
+  max-width: 540px;
+  /*overflow-x: hidden;*/
+}
+
+.img-wishlist {
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+}
+.row{
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 992px) {
+  .wishlist-container {
+    text-align: center;
+  }
+  .img-wishlist{
+    margin-left: 0;
+  }
 }

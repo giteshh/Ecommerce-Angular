@@ -6,7 +6,8 @@ interface Product {
   image: string;
   mrp: number;
   rating: number;
-  discount: number
+  discount: number;
+  quantity: number
 }
 
 const products = [
@@ -18,7 +19,8 @@ const products = [
     "description": "4 GB RAM 64GB ROM",
     "image": "/assets/pics/samsung.jpg",
     "rating": 3.8,
-    "discount": 20
+    "discount": 20,
+    "quantity": 0
   },
   {
     "id": 2,
@@ -28,7 +30,8 @@ const products = [
     "description": "6 GB RAM 64GB ROM",
     "image": "/assets/pics/iphone.jpg",
     "rating": 4.6,
-    "discount": 12
+    "discount": 12,
+    "quantity": 0
   },
   {
     "id": 3,
@@ -38,7 +41,8 @@ const products = [
     "description": "4GB RAM 64GB ROM",
     "image": "/assets/pics/pixel.jpg",
     "rating": 4.0,
-    "discount": 10
+    "discount": 10,
+    "quantity": 0
   },
   {
     "id": 4,
@@ -48,7 +52,8 @@ const products = [
     "description": "8 GB RAM 256GB ROM",
     "image": "/assets/pics/oneplus.jpg",
     "rating": 4.8,
-    "discount": 25
+    "discount": 25,
+    "quantity": 0
   }
 ]
 

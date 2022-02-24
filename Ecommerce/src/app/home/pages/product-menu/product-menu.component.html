@@ -7,19 +7,20 @@
     <div class="card mb-5" id="cardHeight">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light" id="rippleImg2">
         <a routerLink="/home/productDescription/{{product.id}}">
-        <img src="{{product.image}}" class="img-thumbnail" alt="Responsive image"/>
+          <img src="{{product.image}}" class="img-thumbnail" alt="Responsive image"/>
         </a>
       </div>
       <div class="card-body">
         <h4 class="text-center elipsis"><b>{{product.name}}</b></h4>
         <h6 class="elipsis text-center">{{product.description}}</h6>
-        <p class="text-center text-muted"><b>M.R.P.:</b> <s>{{product.mrp | currency:'INR' }}/-</s> </p>
+        <p class="text-center text-muted"><b>M.R.P.:</b> <s>{{product.mrp | currency:'INR' }}/-</s></p>
         <p class="text-center"><b>Offer Price:</b> {{product.price | currency:'INR' }}/-</p>
         <div class="button-row">
           <a class="btn btn-sm btn-primary rounded-lg" routerLink="/home/productDescription/{{product.id}}"
              data-toggle="tooltip" data-placement="bottom" title="View product description">
             <i class="fa fa-eye fa-lg"></i></a>
-          <a class="btn btn-sm btn-danger ml-2 rounded-lg" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"
+          <a class="btn btn-sm btn-danger ml-2 rounded-lg" data-toggle="tooltip" data-placement="bottom"
+             title="Add to Wishlist"
              (click)="addToWishlist(product)">
             <i class="fa fa-heart fa-lg"></i></a>
         </div>
@@ -31,7 +32,7 @@
 <!--end of product 1 menu-->
 
 <!--dummy products-->
-<div class="row mt-5" *ngFor="let number of numSequence(4)">
+<div class="row" *ngFor="let number of numSequence(4)">
   <div class="col-md-2"></div>
   <div class="col-md-2" *ngFor="let number of numSequence(4)">
     <div class="card mb-5" id="dummyCardHeight">

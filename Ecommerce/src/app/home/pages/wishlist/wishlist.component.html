@@ -2,12 +2,12 @@
 
 <!--<div *ngIf="wishListItems.length">-->
 <div *ngIf="wishListItems.length">
-  <button class="btn btn-danger text-right" (click)="onClearWishlist()">
+  <button class="btn btn-sm btn-danger text-right" (click)="onClearWishlist()">
     <i class="fa fa-trash mr-3"></i>Clear Wishlist
   </button>
 </div>
 
-<div class="card text-center bg-warning" id="noItemCardInWishlist" *ngIf="!wishListItems.length">
+<div class="card text-center bg-warning" id="noItemCardInWishlist" *ngIf="!wishListItems.length" >
   <div class="card-body">
     <i class="fa fa-4x fa-heart" id="heartIconColor"></i>
     <h1 class="card-title text-black">Oops, your Wishlist is empty!</h1>
@@ -16,19 +16,21 @@
   </div>
 </div>
 
-<div class="row mt-4" *ngFor="let product of wishListItems, let i = index ">
+<div class="row mt-4 m-0" *ngFor="let product of wishListItems, let i = index">
   <div class="col-md-4"></div>
-  <div class="col-md-8">
-    <div class="card mb-3" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="{{ product.image }}" class="img-fluid rounded-start" style="border: 1px solid black">
+  <div class="col-md-8" style="overflow-x: hidden;">
+    <div class="card mb-3 wishlist-container">
+      <div class="row">
+        <div class="col-md-6 p-0">
+          <img src="{{ product.image }}" class="img-wishlist">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6 p-0">
           <div class="card-body">
-            <!--            <h4 class="card-title">{{ product.title }}</h4>-->
+                        <h4 class="card-title">{{ product.name }}</h4>
             <p class="card-text">{{ product.description }}</p>
-            <h3 class="card-text text-muted">{{ product.price | currency:"INR" }}</h3>
+            <h5 class="font-weight-bold">{{ product.price | currency:"INR" }}</h5>
+            <p class="card-text text-muted"><s>{{ product.mrp | currency:"INR" }}</s></p>
+            <h3 class="card-text text-success">{{ product.discount}}% Off</h3>
             <button class="btn btn-sm btn-danger" (click)="removeItem(i)">
               <i class="fa fa-trash"></i></button>
             <button class="btn btn-sm btn-primary" (click)="addToCart(product)">Add to cart</button>

@@ -11,12 +11,8 @@ export class HomeService {
 
   private productObject: string = "/assets/data/product.ts";
 
-  // items: Product[] = [];
   wishlistItems: Product[] = [];
-  // product: Product[] = [];
-  // private productUrl: string = "/assets/data/product.ts";
   private productPath: string = "/assets/data/product.ts";
-  // private productUrl = [];
   product: Product[]=[];
 
   constructor(private http: HttpClient,
