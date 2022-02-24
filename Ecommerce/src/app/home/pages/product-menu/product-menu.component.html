@@ -9,14 +9,15 @@
         <img src="{{product.image}}" class="img-thumbnail" alt="Responsive image"/>
       </div>
       <div class="card-body">
-        <!--        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>-->
-        <h5 class="elipsis text-center"><b>{{product.description}}</b></h5>
-        <h6 class="text-center"><b>Price:</b> {{product.price | currency:'INR' }}/-</h6>
+        <h4 class="text-center elipsis"><b>{{product.name}}</b></h4>
+        <h6 class="elipsis text-center">{{product.description}}</h6>
+        <p class="text-center text-danger"><b>M.R.P.:</b> <s>{{product.mrp | currency:'INR' }}/-</s> </p>
+        <p class="text-center"><b>Offer Price:</b> {{product.price | currency:'INR' }}/-</p>
         <div class="button-row">
-          <a class="btn btn-sm btn-primary" routerLink="/home/productDescription/{{product.id}}"
+          <a class="btn btn-sm btn-primary rounded-lg" routerLink="/home/productDescription/{{product.id}}"
              data-toggle="tooltip" data-placement="bottom" title="View product description">
             <i class="fa fa-eye fa-lg"></i></a>
-          <a class="btn btn-sm btn-danger ml-2" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"
+          <a class="btn btn-sm btn-danger ml-2 rounded-lg" data-toggle="tooltip" data-placement="bottom" title="Add to Wishlist"
              (click)="addToWishlist(product)">
             <i class="fa fa-heart fa-lg"></i></a>
         </div>
@@ -31,19 +32,20 @@
 <div class="row mt-5" *ngFor="let number of numSequence(4)">
   <div class="col-md-2"></div>
   <div class="col-md-2" *ngFor="let number of numSequence(4)">
-    <div class="card mb-5">
+    <div class="card mb-5" id="dummyCardHeight">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light" id="rippleImg">
         <img src="/assets/pics/dummy.jpg" class="img-thumbnail" alt="Responsive image"/>
       </div>
       <div class="card-body">
-        <!--        <h5 class="text-center elipsis"><b>{{product.title}}</b></h5>-->
-        <p class="elipsis text-center">product description</p>
-        <h6 class="text-center"><b>Price:</b> xx,xxx /-</h6>
+        <h4 class="text-center elipsis"><b>Product Title</b></h4>
+        <h6 class="elipsis text-center">Product Description</h6>
+        <p class="text-center text-danger"><b>MRP:</b> <s>xx,xxx </s>/-</p>
+        <p class="text-center"><b>Price:</b> xx,xxx /-</p>
         <div class="button-row">
-          <a class="btn btn-sm btn-primary disabled"
+          <a class="btn btn-sm btn-primary disabled rounded-lg"
              data-toggle="tooltip" data-placement="bottom" aria-disabled="true" title="View product description">
             <i class="fa fa-eye fa-lg"></i></a>
-          <a class="btn btn-sm btn-danger ml-2 disabled" aria-disabled="true" data-toggle="tooltip"
+          <a class="btn btn-sm btn-danger ml-2 disabled rounded-lg" aria-disabled="true" data-toggle="tooltip"
              data-placement="bottom" title="Add to Wishlist">
             <i class="fa fa-heart fa-lg"></i></a>
         </div>
