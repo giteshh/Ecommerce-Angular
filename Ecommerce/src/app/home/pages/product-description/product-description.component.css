@@ -1,11 +1,6 @@
 .imageEdit {
   height: 400px;
   width: 400px;
-  /*border: 1px solid black;*/
-}
-
-#colEdit {
-  border: 1px solid black;
 }
 
 #allPics {
@@ -15,7 +10,7 @@
   height: 10rem;
 }
 
-.imageGallery{
+.imageGallery {
   width: 50px;
   height: 80px;
 }
@@ -26,17 +21,35 @@
   border: 1px solid black;
 }
 
-.moreImages{
+.moreImages {
   height: 80px;
   width: 100px;
   border: 1px solid black;
 }
 
-.mainDiv{
+.mainDiv {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+}
+
+.returnPolicy {
+
+}
+
+#cardHeightSimilar {
+  height: 380px;
+  width: 220px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+
+}
+
+.card-img-similar{
+  height: 150px;
+  width: 160px;
+  margin: 0 auto;
 }
 
 

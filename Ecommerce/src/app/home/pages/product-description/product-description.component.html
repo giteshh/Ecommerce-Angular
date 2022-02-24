@@ -2,68 +2,135 @@
 
 <a href="#!" class="btn btn-sm btn-blue ml-4 mt-2" routerLink="/home/productMenu">
   <i class="fa fa-arrow-left fa-lg"></i></a>
-
-<div class="card text-center">
-  <!--  <div class="card-header">-->
-
-  <!--  </div>-->
-  <div class="card-body">
+<hr>
+<div class="text-center">
+  <div>
     <div class="row mt-4" id="colEdit" *ngIf="product">
-      <div class="col-md-2">
-        <div class="mainDiv">
-          <div><img class="moreImages" src="{{product.image}}"></div>
-          <div><img class="moreImages" src="{{product.image}}"></div>
-          <div><img class="moreImages" src="{{product.image}}"></div>
-          <div><img class="moreImages" src="{{product.image}}"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4 ml-3">
+        <div class="d-flex">
+          <div class="mainDiv">
+            <div><img class="moreImages mb-2" src="{{product.image}}"></div>
+            <div><img class="moreImages mb-2" src="{{product.image}}"></div>
+            <div><img class="moreImages mb-2" src="{{product.image}}"></div>
+            <div><img class="moreImages mb-2" src="{{product.image}}"></div>
+            <div><img class="moreImages" src="{{product.image}}"></div>
+          </div>
+          <img src="{{product.image}}" class="imageEdit ml-4">
         </div>
       </div>
-      <div class="col-md-4 ml-3">
-        <img src="{{product.image}}" class="imageEdit">
-      </div>
       <div class="col-md-4">
-        <div class="card" style="width: 25rem; height: 25rem">
-          <div class="card-body">
-            <h1 class="pb-2 pt-0"><b>{{ product.name }}</b></h1>
-            <h6 class="mt-0 pt-0 text-muted">{{ product.description }}</h6>
-            <p>{{product.rating}}<i class="fa fa-star mr-1 ml-1 text-warning"></i> Ratings</p>
-            <p>Some Credit card offers T&C</p>
-            <p>Some Bank Offers and Cashback T&C</p>
-            <h4 class="text-danger"><b>{{ product.price | currency:'INR' }}</b></h4>
-            <div class="d-flex text-center">
-            <p class="ml-5 pl-5 text-muted"><s>{{ product.mrp | currency:'INR' }}</s></p>
-              <h5 class="ml-3 text-success"><b>{{product.discount}}% Off</b></h5>
+        <h1 class="pb-2 pt-0"><b>{{ product.name }}</b></h1>
+        <h6 class="mt-0 pt-0 text-muted">{{ product.description }}</h6>
+        <p>{{product.rating}}<i class="fa fa-star mr-1 ml-1 text-warning"></i> Ratings</p>
+        <p>Some Credit card offers T&C</p>
+        <p>Some Bank Offers and Cashback T&C</p>
+        <h4 class="text-dark"><b>{{ product.price | currency:'INR' }}</b></h4>
+        <p class="text-muted"><s>{{ product.mrp | currency:'INR' }}</s></p>
+        <h5 class="ml-3 text-success"><b>{{product.discount}}% Off</b></h5>
+        <p class="text-muted">inclusive of all taxes</p>
+        <div class="mt-0">
+          <button class="btn btn-md btn-info" (click)="addToCart(product)">
+            <i class="fa fa-shopping-cart mr-2"></i>Add to Cart
+          </button>
+          <button class="btn btn-md btn-pink" (click)="addToWishlist(product)">
+            <i class="fa fa-heart mr-2"></i>Add to Wishlist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<hr>
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="row mt-5">
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+    <div class="returnPolicy btn disabled font-weight-bold mt-5">
+      Easy 30 days return and exchange. <br>
+      Return Policies may vary based on products and promotions.
+      <div class="mt-3">
+        <button class="btn btn-outline btn-sm"><i class="fa fa-share fa-2x text-warning"></i>
+        </button>
+        <button class="btn btn-outline btn-sm"><i class="fa fa-truck fa-2x text-danger"></i></button>
+        <button class="btn btn-outline btn-sm"><i class="fa fa-check fa-2x text-success"></i></button>
+      </div>
+      <div class="d-flex ml-5">
+        <p class="ml-5 mr-2">Easy <br> Returns</p>
+        <p class="ml-4 mr-2">Fast <br>Delivery</p>
+        <p class="ml-4">Quality <br> Assured</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="reviews">
+      <div class="card" style="width: 40rem;">
+        <div class="card-header">
+          Reviews by verified customers <i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i>
+          <i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i
+          class="fa fa-star text-warning"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            1<i class="fa fa-star text-warning"></i>
+            Worst product, hangs so much. I hate it. Waste of money.
+            <i class="fa fa-user-circle ml-3 text-muted"></i> Customer Name
+          </li>
+          <li class="list-group-item">
+            3.8<i class="fa fa-star text-warning"></i>
+            Awesome camera, good sound. Worth buying.
+            <i class="fa fa-user-circle ml-3 text-muted"></i> Customer Name
+          </li>
+          <li class="list-group-item">
+            4.5<i class="fa fa-star text-warning"></i>
+            Awesome smartphone, I love it <i class="fa fa-heart text-danger"></i>
+            <i class="fa fa-user-circle ml-3 text-muted"></i> Customer Name
+          </li>
+          <form class="form-inline mt-2">
+            <div class="form-group mx-sm-3 mb-2">
+              <label for="inputPassword2" class="sr-only">Password</label>
+              <input type="password" class="form-control" id="inputPassword2" placeholder="Have any review?"
+                     style="width: 470px">
             </div>
-            <p class="text-muted">inclusive of all taxes</p>
-            <div class="mt-0">
-              <button class="btn btn-md btn-info" (click)="addToCart(product)">
-                <i class="fa fa-shopping-cart mr-2"></i>Add to Cart
-              </button>
-              <button class="btn btn-md btn-pink" (click)="addToWishlist(product)">
-                <i class="fa fa-heart mr-2"></i>Add to Wishlist
-              </button>
-              <!--            <button class="btn btn-sm btn-purple" disabled>-->
-              <!--              <i class="fa fa-money-check mr-2"></i>Buy Now</button>-->
-            </div>
+            <button type="submit" class="btn btn-sm btn-primary mb-2 disabled">Add review</button>
+          </form>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+<hr>
+<h2 class="mt-4 mb-4 ml-4"><b>Similar Products</b></h2>
+
+<div class="row p-0">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="row ml-4">
+      <div class="col-md-3" *ngFor="let item of products">
+        <div class="card text-center" id="cardHeightSimilar">
+          <a href="/home/productDescription/{{item.id}}">
+            <img src="{{ item.image }}" class="card-img-similar">
+          </a>
+          <hr>
+          <div class="card-body p-0">
+            <h5 class="card-title p-0">{{ item.name }}</h5>
+            <p class="card-title text-muted p-0">{{ item.description }}</p>
+            <p class="p-0"><b>{{ item.price | currency:"INR" }}</b></p>
+            <p class="p-0 text-muted"><s>{{ item.mrp | currency:"INR" }}</s></p>
+            <a class="btn btn-sm btn-info p-2 rounded-lg" href="/home/productDescription/{{item.id}}">Shop Now</a>
           </div>
         </div>
       </div>
-      <div class="col-md-2"></div>
     </div>
   </div>
+  <div class="col-md-2"></div>
 </div>
 
-<h2 class="mt-4 mb-4 ml-4"><b>Similar Products</b></h2>
 
-<!--<div class="row ml-4">-->
-<!--  <div class="col-md-3" *ngFor="let item of products">-->
-<!--    <div class="card" style="width: 16rem;" id="cardHeight">-->
-<!--      <img src="{{ item.image }}" class="card-img-top" id="imgSimilarProducts">-->
-<!--      <div class="card-body">-->
-<!--        <h2 class="card-title">{{ item.description }}</h2>-->
-<!--        <p class="card-text">{{ item.rate | currency:"INR" }}</p>-->
-<!--        <a href="#" class="btn btn-info" >Shop Now</a>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+
 

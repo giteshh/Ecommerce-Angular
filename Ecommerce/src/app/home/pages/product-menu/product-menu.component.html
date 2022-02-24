@@ -6,12 +6,14 @@
   <div class="col-md-2" *ngFor="let product of products">
     <div class="card mb-5" id="cardHeight">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light" id="rippleImg2">
+        <a routerLink="/home/productDescription/{{product.id}}">
         <img src="{{product.image}}" class="img-thumbnail" alt="Responsive image"/>
+        </a>
       </div>
       <div class="card-body">
         <h4 class="text-center elipsis"><b>{{product.name}}</b></h4>
         <h6 class="elipsis text-center">{{product.description}}</h6>
-        <p class="text-center text-danger"><b>M.R.P.:</b> <s>{{product.mrp | currency:'INR' }}/-</s> </p>
+        <p class="text-center text-muted"><b>M.R.P.:</b> <s>{{product.mrp | currency:'INR' }}/-</s> </p>
         <p class="text-center"><b>Offer Price:</b> {{product.price | currency:'INR' }}/-</p>
         <div class="button-row">
           <a class="btn btn-sm btn-primary rounded-lg" routerLink="/home/productDescription/{{product.id}}"
