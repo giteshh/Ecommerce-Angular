@@ -26,4 +26,17 @@
   border: 1px solid black;
 }
 
+.moreImages{
+  height: 80px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.mainDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
 
