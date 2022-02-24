@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {FirebaseService} from "../../services/firebase.service";
 
@@ -17,9 +17,6 @@ export class RegisterComponent {
   error: { name: string, message: string } = {name: '', message: ''}; // for firbase error handle
 
   constructor(private firebaseService: FirebaseService, private router: Router) {
-  }
-
-  ngOnInit(): void {
   }
 
   clearErrorMessage() {

@@ -10,7 +10,4 @@ export class HomePageComponent {
   constructor() {
   }
 
-  ngOnInit(): void {
-  }
-
 }

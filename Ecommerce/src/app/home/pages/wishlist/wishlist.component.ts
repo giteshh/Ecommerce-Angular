@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {Product} from "../../../../assets/data/product";
 import {ActivatedRoute} from "@angular/router";
 import {HomeService} from "../../home.service";
@@ -8,19 +8,17 @@ import {HomeService} from "../../home.service";
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.css']
 })
-export class WishlistComponent implements OnInit {
+export class WishlistComponent {
 
   product: Product | any;
 
   wishListItems = this.homeService.getWishlistItems();
 
   constructor(private route: ActivatedRoute,
-              private homeService: HomeService) { }
-
-  ngOnInit() {
+              private homeService: HomeService) {
   }
 
-  onClearWishlist(){
+  onClearWishlist() {
     window.alert('Saved items will be removed from Wishlist. Are you sure ?');
     this.wishListItems = [];
   }

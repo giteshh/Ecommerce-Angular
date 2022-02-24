@@ -9,18 +9,14 @@ import {FirebaseService} from "../../../services/firebase.service";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  product: Product[]=[];
+  product: Product[] = [];
   totalItemsInCart = 0;
 
   constructor(private homeService: HomeService,
               private publicService: PublicService,
               private firebaseService: FirebaseService) {
-  }
-
-  ngOnInit(): void {
-
   }
 
   logout() {
