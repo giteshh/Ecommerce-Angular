@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
 import {ActivatedRoute} from "@angular/router";
 import {Product, products} from "../../../../assets/data/product";
+import {SessionService} from "../../../services/session.service";
 
 @Component({
   selector: 'app-product-description',
@@ -11,28 +12,59 @@ import {Product, products} from "../../../../assets/data/product";
 export class ProductDescriptionComponent implements OnInit {
 
   product: Product | any;
-  items = products ;
+  cart: Product[] | any = [];
+  items = products;
   productId = 0;
   products = products;
+  existingProduct = false;
 
   constructor(private homeService: HomeService,
+              private sessionService: SessionService,
               private activatedRoute: ActivatedRoute,
               private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    // First get the product id from the current route.
+    this.getParams();
+  }
+
+  navigate(id: number) {
+    this.sessionService.navigate('/home/productDescription/' + id);
+    this.findProduct(id);
+  }
+
+  findProduct(id: number) {
+    // Find the product that correspond with the id provided in route.
+    this.product = products.find(product => product.id === id);
+
+  }
+
+  getParams() {
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = Number(routeParams.get('productId'));
-
-    // Find the product that correspond with the id provided in route.
-    this.product = products.find(product => product.id === productIdFromRoute);
+    this.findProduct(productIdFromRoute);
   }
 
   // move product into shopping cart
   addToCart(product: Product) {
-    this.homeService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+    this.existingProduct = false;
+    // if(this.sessionService.getCart()){
+    if (this.sessionService.getCart()) {
+      this.cart = this.sessionService.getCart();
+      console.log(product.id);
+      this.cart.forEach((cart: any) => {
+        console.log(cart.id);
+        if (cart.id == product.id) {
+          this.existingProduct = true;
+        }
+      })
+    }
+    if (!this.existingProduct) {
+      this.sessionService.addToCart(product);
+      window.alert('Your product has been added to the cart!');
+    } else {
+      window.alert('Your product is already exist in cart!');
+    }
   }
 
   //move products to wishlist

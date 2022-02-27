@@ -62,5 +62,19 @@ export class SessionService {
     localStorage.setItem('access', token);
   }
 
+  getCart(): any {
+    return JSON.parse(<string>localStorage.getItem('cart'));
+  }
+
+  addToCart(cart: any) {
+    let arr = [];
+    if (localStorage.getItem('cart')) {
+      arr = JSON.parse(<string>localStorage.getItem('cart')) || [];
+    }
+    arr.push(cart);
+    localStorage.setItem('cart', JSON.stringify(arr));
+  }
+
+
 }
 

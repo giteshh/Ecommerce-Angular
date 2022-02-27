@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Product} from "../../assets/data/product";
 import {HttpService} from "../services/http.service";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,8 @@ export class HomeService {
   product: Product[]=[];
 
   constructor(private http: HttpClient,
-              private httpService: HttpService) {
+              private httpService: HttpService,
+              ) {
   }
 
   getProducts(): Observable<Product[]> {
@@ -66,6 +67,12 @@ export class HomeService {
   }
 
   // wishlist services end
+
+  total = new BehaviorSubject<number>(0);
+
+  setTotalItems(value: number) {
+    this.total.next(value);
+  }
 
 }
 

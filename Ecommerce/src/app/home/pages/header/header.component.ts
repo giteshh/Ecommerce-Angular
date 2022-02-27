@@ -17,9 +17,15 @@ export class HeaderComponent {
   constructor(private homeService: HomeService,
               private publicService: PublicService,
               private firebaseService: FirebaseService) {
+    this.getLength();
   }
 
   logout() {
     this.firebaseService.signout();
+  }
+
+  getLength() {
+    // console.log(this.product.length);
+    return this.product.length = this.totalItemsInCart;
   }
 }

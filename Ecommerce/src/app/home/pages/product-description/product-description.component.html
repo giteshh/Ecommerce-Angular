@@ -120,7 +120,7 @@
     <div class="row ml-4">
       <div class="col-md-3" *ngFor="let item of products">
         <div class="card text-center" id="cardHeightSimilar">
-          <a href="/home/productDescription/{{item.id}}">
+          <a (click)="navigate(item.id)">
             <img src="{{ item.image }}" class="card-img-similar">
           </a>
           <hr>
@@ -129,7 +129,8 @@
             <p class="card-title text-muted p-0">{{ item.description }}</p>
             <p class="p-0"><b>{{ item.price | currency:"INR" }}</b></p>
             <p class="p-0 text-muted"><s>{{ item.mrp | currency:"INR" }}</s></p>
-            <a class="btn btn-block btn-info p-2 rounded-lg" href="/home/productDescription/{{item.id}}">Shop Now</a>
+            <a class="btn btn-block btn-info p-2 rounded-lg"
+               routerLink="/home/productDescription/{{item.id}}">Shop Now</a>
           </div>
         </div>
       </div>

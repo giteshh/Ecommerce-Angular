@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {HomeService} from "../../home.service";
 import {products, Product} from "../../../../assets/data/product";
 
@@ -7,12 +7,13 @@ import {products, Product} from "../../../../assets/data/product";
   templateUrl: './product-menu.component.html',
   styleUrls: ['./product-menu.component.css']
 })
-export class ProductMenuComponent {
+export class ProductMenuComponent{
 
   products = products;
 
-
+  @ViewChild('head') head:any;
   constructor(private homeService: HomeService) {
+
   }
 
   //move products to wishlist

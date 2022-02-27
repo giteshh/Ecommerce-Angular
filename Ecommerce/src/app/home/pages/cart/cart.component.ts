@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HomeService} from "../../home.service";
 import {Product} from "../../../../assets/data/product";
+import {SessionService} from "../../../services/session.service";
 
 interface cartItems {
   id: number,
@@ -18,16 +19,19 @@ interface cartItems {
 export class CartComponent {
 
   product: Product[] = [];
-  // items = this.homeService.getItems();
   items;
   total = 0;
   quantity = 0;
   cartItemTotal = 0;
   cartProducts: cartItems[] = [];
   price = 0;
+  existingProduct = false;
+  cart: Product[] | any = [];
 
-  constructor(private homeService: HomeService) {
-    this.getItems();
+  constructor(private homeService: HomeService,
+              private sessionService: SessionService) {
+    // this.getItems();
+    this.getCartItems();
     // this.doTotal();
     this.items = this.homeService.getItems();
   }
@@ -41,9 +45,9 @@ export class CartComponent {
     this.homeService.removeItem(index);
   }
 
-  getItems() {
-    return this.product;
-  }
+  // getItems() {
+  //   return this.product;
+  // }
 
   //move products to wishlist
   addToWishlist(product: Product) {
@@ -52,7 +56,11 @@ export class CartComponent {
   }
 
   cartTotal(product: any) {
-   this.total = this.price * this.quantity;
+    this.total = this.price * this.quantity;
+  }
+
+  getCartItems() {
+    this.sessionService.getCart();
   }
 
   // doTotal() {
