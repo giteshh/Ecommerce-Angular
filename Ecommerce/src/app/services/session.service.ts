@@ -75,6 +75,15 @@ export class SessionService {
     localStorage.setItem('cart', JSON.stringify(arr));
   }
 
+  removeFromCart(index: number) {
+    let arr = [];
+    if (localStorage.getItem('cart')) {
+      arr = JSON.parse(<string>localStorage.getItem('cart')) || [];
+    }
+    arr.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(arr));
+  }
+
 
 }
 

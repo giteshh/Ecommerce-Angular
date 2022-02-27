@@ -36,7 +36,6 @@ export class ProductDescriptionComponent implements OnInit {
   findProduct(id: number) {
     // Find the product that correspond with the id provided in route.
     this.product = products.find(product => product.id === id);
-
   }
 
   getParams() {
@@ -48,12 +47,9 @@ export class ProductDescriptionComponent implements OnInit {
   // move product into shopping cart
   addToCart(product: Product) {
     this.existingProduct = false;
-    // if(this.sessionService.getCart()){
     if (this.sessionService.getCart()) {
       this.cart = this.sessionService.getCart();
-      console.log(product.id);
       this.cart.forEach((cart: any) => {
-        console.log(cart.id);
         if (cart.id == product.id) {
           this.existingProduct = true;
         }
@@ -61,16 +57,16 @@ export class ProductDescriptionComponent implements OnInit {
     }
     if (!this.existingProduct) {
       this.sessionService.addToCart(product);
-      window.alert('Your product has been added to the cart!');
+      alert('Your product has been added to the cart!');
     } else {
-      window.alert('Your product is already exist in cart!');
+      alert('Your product is already added to cart!');
     }
   }
 
   //move products to wishlist
   addToWishlist(product: Product) {
     this.homeService.addToWishlist(product);
-    window.alert('Your product has been added to the your Wishlist!');
+    alert('Your product has been added to the your Wishlist!');
   }
 
 }

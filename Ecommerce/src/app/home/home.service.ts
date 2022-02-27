@@ -13,23 +13,24 @@ export class HomeService {
 
   wishlistItems: Product[] = [];
   private productPath: string = "/assets/data/product.ts";
-  product: Product[]=[];
+  product: Product[] = [];
+  cart: Product[] | any = [];
 
   constructor(private http: HttpClient,
               private httpService: HttpService,
-              ) {
+  ) {
   }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.productPath);
   }
 
-  detail(product: Product): Observable<Product>{
+  detail(product: Product): Observable<Product> {
     const url = `${this.productPath}/${product.id}`;
     return this.http.get<Product>(url);
   }
 
-  getDetail(id: any):Observable<any>{
+  getDetail(id: any): Observable<any> {
     return this.http.get(this.productPath + id)
   }
 
@@ -39,16 +40,12 @@ export class HomeService {
   }
 
   removeItem(index: number) {
-    this.product.splice(index, 1);
-  }
-
-  getItems() {
-    return this.product;
+    this.cart.splice(index, 1);
   }
 
   clearCart() {
-    this.product = [];
-    return this.product;
+    this.cart = localStorage.clear();
+    return this.cart;
   }
 
   // cart service end
@@ -62,7 +59,7 @@ export class HomeService {
     return this.wishlistItems;
   }
 
-  removeWishlistItem(index: number){
+  removeWishlistItem(index: number) {
     this.wishlistItems.splice(index, 1);
   }
 
@@ -75,9 +72,6 @@ export class HomeService {
   }
 
 }
-
-
-
 
 
 // detail(productId: number, data: any): Observable<any> {

@@ -3,12 +3,12 @@
 <!--<a class="btn btn-sm btn-blue ml-4 mt-2" routerLink="/home/productMenu">-->
 <!--  <i class="fa fa-arrow-left fa-lg"></i></a>-->
 
-<div *ngIf="items.length">
+<div *ngIf="showButton">
   <a class="btn btn-sm btn-red ml-4 mt-2" (click)="clearCart()">
     <i class="fa fa-trash fa-lg"></i></a>
 </div>
 
-<div class="card text-center bg-warning" id="noItemCardInCart" *ngIf="!items.length">
+<div class="card text-center bg-warning" id="noItemCardInCart" *ngIf="!showButton">
   <div class="card-body">
     <i class="fa fa-4x fa-shopping-cart"></i>
     <h1 class="card-title">Oops, your cart is empty!</h1>
@@ -20,7 +20,7 @@
 <div class="row m-0">
   <div class="col-md-2"></div>
   <div class="col-md-4">
-    <div class="card mb-3" style="max-width: 540px;" *ngFor="let item of items, let i = index">
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let item of cart, let i = index">
       <div class="row no-gutters">
         <div class="col-md-4">
           <img src="{{ item.image }}" class="card-img" alt="...">
@@ -33,7 +33,8 @@
             <button class="btn btn-sm btn-danger m-0" (click)="removeCartItem(i)">
               <i class="fa fa-trash mr-2"></i>Remove
             </button>
-            <button class="btn btn-sm btn-primary" (click)="addToWishlist(item)">Move To Wishlist</button>
+            <button class="btn btn-sm btn-primary" (click)="addToWishlist(item)">
+              <i class="fa fa-heart mr-2"></i>Move To Wishlist</button>
           </div>
         </div>
       </div>
@@ -41,14 +42,14 @@
   </div>
   <div class="col-md-4">
     <div class="total-cart-mobile">
-      <div class="card" *ngIf="items.length">
+      <div class="card" *ngIf="showButton">
         <div class="card-body">
                     <h6>Mrp: <s></s></h6>
                     <h6>Final Price:</h6>
                     <h6>Discount: </h6>
           <h6>Transportation Charge: <s>80</s>/- Free</h6>
           <hr>
-          <h5>Total Amount: {{cartItemTotal}}</h5>
+          <h5>Total Amount: {{total}}</h5>
         </div>
       </div>
     </div>
