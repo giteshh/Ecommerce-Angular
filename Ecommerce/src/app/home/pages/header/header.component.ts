@@ -3,6 +3,7 @@ import {Product} from "../../../../assets/data/product";
 import {HomeService} from "../../home.service";
 import {PublicService} from "../../../public/public.service";
 import {FirebaseService} from "../../../services/firebase.service";
+import {SessionService} from "../../../services/session.service";
 
 @Component({
   selector: 'app-header',
@@ -13,10 +14,12 @@ export class HeaderComponent {
 
   product: Product[] = [];
   totalItemsInCart = 0;
+  cart: Product | any;
 
   constructor(private homeService: HomeService,
               private publicService: PublicService,
-              private firebaseService: FirebaseService) {
+              private firebaseService: FirebaseService,
+              private sessionService: SessionService) {
     this.getLength();
   }
 
@@ -25,7 +28,7 @@ export class HeaderComponent {
   }
 
   getLength() {
-    // console.log(this.product.length);
-    return this.product.length = this.totalItemsInCart;
+    // this.sessionService.getCart();
+    // this.totalItemsInCart = this.cart.length;
   }
 }

@@ -21,9 +21,10 @@ export class CartComponent {
   product: Product | any;
   total = 0;
   quantity = 1;
-  cartItemTotal = 0;
+  discount = 0;
+  totalMrp = 0;
+  totalPrice = 0;
   cartProducts: cartItems[] = [];
-  price = 0;
   existingProduct = false;
   showButton = false;
   cart: Product | any;
@@ -36,27 +37,31 @@ export class CartComponent {
   // get all the items added to cart from localstorage
   getCartItems() {
     this.cart = this.sessionService.getCart();
-    if(this.cart){
+    if (this.cart) {
       this.doTotal();
       this.showButton = this.cart.length > 0;
     } else {
       this.showButton = false;
     }
-
   }
 
   // clear all items from cart and localstorage
   clearCart() {
-    alert('All items will be removed from Cart. Are you sure ?');
-    localStorage.clear();
+    if (confirm("All items will be removed from Cart. Are you sure ?")) {
+      localStorage.clear();
+      this.getCartItems();
+    } else {
+    }
+
+  }
+
+  addQty(index: number, e: any) {
+    this.sessionService.addQtyToCart(index, e.target.value);
     this.getCartItems();
   }
 
   // remove selected item from cart and localstorage
   removeCartItem(index: number) {
-    // this.homeService.removeItem(index);
-    // this.cart = this.sessionService.getCart();
-    // localStorage.removeItem();
     this.sessionService.removeFromCart(index);
     this.getCartItems();
   }
@@ -67,18 +72,36 @@ export class CartComponent {
     alert('Your product has been added to the your Wishlist!');
   }
 
-  cartTotal(product: any) {
-    this.total = this.price * this.quantity;
+  // adding mrp of items in the cart
+  getMRP(cart: any) {
+    this.totalMrp = 0;
+    this.cart.forEach((product: Product) => {
+      this.totalMrp += product.mrp;
+    })
   }
 
-  discount(){
-
+  // difference between MRP and price of items
+  getDiscount(cart: any) {
+    this.cart.forEach((product: Product) => {
+      this.discount = product.mrp - product.price;
+    })
   }
 
   doTotal() {
-    this.cart.forEach((product:any) => {
-      this.total += product.price * 1;
+    this.total = 0;
+    this.getMRP(this.cart);
+    this.getDiscount(this.cart);
+    this.cart.forEach((product: Product) => {
+      let finalPrice = product.price * product.quantity;    //default quantity is 1
+      this.total += finalPrice;
     });
+  }
+
+  // placing order and removing items from localstorage
+  placeOrder() {
+    localStorage.clear();
+    this.getCartItems();
+    alert("Your order is placed successfully ");
   }
 }
 

@@ -20,7 +20,7 @@ const products = [
     "image": "/assets/pics/samsung.jpg",
     "rating": 3.8,
     "discount": 20,
-    "quantity": 0
+    "quantity": 1
   },
   {
     "id": 2,
@@ -31,7 +31,7 @@ const products = [
     "image": "/assets/pics/iphone.jpg",
     "rating": 4.6,
     "discount": 12,
-    "quantity": 0
+    "quantity": 1
   },
   {
     "id": 3,
@@ -42,7 +42,7 @@ const products = [
     "image": "/assets/pics/pixel.jpg",
     "rating": 4.0,
     "discount": 10,
-    "quantity": 0
+    "quantity": 1
   },
   {
     "id": 4,
@@ -53,7 +53,7 @@ const products = [
     "image": "/assets/pics/oneplus.jpg",
     "rating": 4.8,
     "discount": 25,
-    "quantity": 0
+    "quantity": 1
   }
 ]
 

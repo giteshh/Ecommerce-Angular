@@ -44,6 +44,7 @@ export class ProductDescriptionComponent implements OnInit {
     this.findProduct(productIdFromRoute);
   }
 
+
   // move product into shopping cart
   addToCart(product: Product) {
     this.existingProduct = false;
@@ -59,7 +60,7 @@ export class ProductDescriptionComponent implements OnInit {
       this.sessionService.addToCart(product);
       alert('Your product has been added to the cart!');
     } else {
-      alert('Your product is already added to cart!');
+      alert('This product already exists in the cart!');
     }
   }
 
