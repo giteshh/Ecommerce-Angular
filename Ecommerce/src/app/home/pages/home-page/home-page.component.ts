@@ -10,4 +10,8 @@ export class HomePageComponent {
   constructor() {
   }
 
+  // page was opening from middle so to open the page from top used this
+  navigateToTop() {
+    window.scrollTo(0, 0);
+  }
 }

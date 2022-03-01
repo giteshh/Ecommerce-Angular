@@ -130,7 +130,7 @@
             <p class="p-0"><b>{{ item.price | currency:"INR" }}</b></p>
             <p class="p-0 text-muted"><s>{{ item.mrp | currency:"INR" }}</s></p>
             <a class="btn btn-block btn-info p-2 rounded-lg"
-               routerLink="/home/productDescription/{{item.id}}">Shop Now</a>
+               (click)="navigate(item.id)">Shop Now</a>
           </div>
         </div>
       </div>

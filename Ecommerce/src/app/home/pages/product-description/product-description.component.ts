@@ -30,7 +30,8 @@ export class ProductDescriptionComponent implements OnInit {
 
   navigate(id: number) {
     this.sessionService.navigate('/home/productDescription/' + id);
-    this.findProduct(id);
+    window.scrollTo(0, 0),   //this will navigate you to the top of page without reloading
+      this.findProduct(id);
   }
 
   findProduct(id: number) {
