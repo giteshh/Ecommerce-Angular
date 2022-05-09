@@ -1,0 +1,12 @@
+#noItemCardInCart{
+  margin-top: 200px;
+}
+
+@media only screen and (max-width: 992px){
+  #cardBody-mobile{
+    text-align: center;
+  }
+  .total-cart-mobile{
+    margin-bottom: 15px;
+  }
+}

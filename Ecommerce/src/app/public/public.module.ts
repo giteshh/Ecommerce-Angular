@@ -1,18 +1,21 @@
-import { PublicComponent } from './public.component';
-import { LoginComponent } from './login/login.component';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PublicRoutingModule } from './public-routing.module';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {PublicRoutingModule} from './public-routing.module';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
-    PublicComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
-    PublicRoutingModule
+    PublicRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
-export class PublicModule { }
+export class PublicModule {
+}

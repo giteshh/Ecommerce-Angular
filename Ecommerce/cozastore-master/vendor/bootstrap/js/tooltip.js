@@ -158,7 +158,7 @@ var Tooltip = function () {
   }
 
   //
-  // Public methods
+  // PublicInterface methods
   //
 
   /**

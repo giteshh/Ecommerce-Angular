@@ -1,0 +1,45 @@
+.img-thumbnail {
+  height: 250px;
+  width: 260px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+#cardHeight {
+  height: 470px;
+  width: 260px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+#dummyCardHeight {
+  height: 470px;
+  width: 260px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.elipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-row {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#rippleImg {
+  margin: 0 auto;
+}
+
+#rippleImg2 {
+  margin: 0 auto;
+}
+
+.row{
+  margin: 0;
+}

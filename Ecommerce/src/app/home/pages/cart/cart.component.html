@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<div *ngIf="showButton">
+  <a class="btn btn-sm btn-red ml-4 mt-2" (click)="clearCart()">
+    <i class="fa fa-trash fa-lg"></i></a>
+</div>
+
+<div class="card text-center bg-warning" id="noItemCardInCart" *ngIf="!showButton">
+  <div class="card-body">
+    <i class="fa fa-4x fa-shopping-cart"></i>
+    <h1 class="card-title">Oops, your cart is empty!</h1>
+    <p class="card-text">Click on shop now to fill your cart with happiness.</p>
+    <a class="btn btn-primary" routerLink="/home/Home">Shop Now</a>
+  </div>
+</div>
+
+<div class="row m-0">
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let item of cart, let i = index">
+      <a (click)="removeCartItem(i)" class="text-danger font-weight-bold ml-2" style="font-size: 20px">
+        X
+        <!--        <h3 class="align-items-end text-danger">X</h3>-->
+      </a>
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{ item.image }}" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body" id="cardBody-mobile">
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p>{{ item.description }}</p>
+            <h5>{{ item.price | currency:'INR'}}/-</h5>
+            <p class="text-muted"><s>{{ item.mrp | currency:'INR'}}/-</s></p>
+            <label><b>Quantity</b></label>
+            <input class="ml-3" type="number" min="1" max="5" value="{{item.quantity}}" style="width: 40px"
+                   (change)="addQty(i, $event)">
+            <br>
+            <!--            <button class="btn btn-sm btn-danger" (click)="addToWishlist(item)">-->
+            <!--              <i class="fa fa-heart fa-lg"></i>-->
+            <!--            </button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="total-cart-mobile">
+      <div class="card" *ngIf="showButton">
+        <div class="card-body">
+          <table class="table">
+            <tr>
+              <td><b>Total Price</b></td>
+              <td class="font-weight-bold">{{totalMrp | currency: 'INR'}}</td>
+            </tr>
+            <tr>
+              <td><b>Total Discount</b></td>
+              <td class="text-muted">-{{discount | currency: 'INR'}}</td>
+            </tr>
+            <tr>
+              <td><b>Transportation Charge</b></td>
+              <td><s>80</s>/- Free</td>
+            </tr>
+            <tr>
+              <td><b>Total Amount</b></td>
+              <td><h6 class="text-primary font-weight-bold">{{total | currency: 'INR'}} /-</h6></td>
+            </tr>
+          </table>
+          <hr>
+          <div class="text-center">
+            <span><b>Select Payment Mode</b></span> <br>
+            <select class="mt-2 text-center">
+              <option>Cash On Delivery</option>
+              <option>Net Banking</option>
+              <option>UPI Payment</option>
+            </select>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-lg btn-default text-dark mt-3" (click)="placeOrder()">
+              <i class="fa fa-shopping-bag fa-lg mr-2"></i>
+              Place Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+
+
+

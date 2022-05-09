@@ -1,0 +1,112 @@
+.imageEdit {
+  height: 400px;
+  width: 400px;
+}
+
+#allPics {
+  /*max-width: 12rem;*/
+  /*max-height: 12rem;*/
+  width: 35rem;
+  height: 10rem;
+}
+
+.imageGallery {
+  width: 50px;
+  height: 80px;
+}
+
+#imgSimilarProducts {
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+}
+
+.moreImages {
+  height: 80px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.mainDiv-mobile{
+  display: none;
+}
+
+#cardHeightSimilar {
+  height: 380px;
+  width: 250px;
+  border-radius: 15px;
+  margin: 0 auto 20px auto ;
+}
+
+.card-img-similar {
+  height: 150px;
+  width: 160px;
+  margin: 0 auto;
+}
+
+.reviews{
+  width: 40rem;
+}
+
+.returnPolicyIcons{
+  margin-left: 17%;
+}
+#inputPassword2{
+  width: 470px;
+}
+
+.mobile-hide{
+  display: block;
+}
+.row {
+  margin: 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .imageEdit {
+    width: 50%;
+    height: 75%;
+  }
+  .reviews{
+    width: 100%;
+  }
+  #returnPolicy{
+    width: 100%;
+  }
+  .returnPolicyIcons{
+    width: 100%;
+    margin-left: 0;
+  }
+  #inputPassword2{
+    width: 100%;
+  }
+
+  .row {
+    margin: 0;
+  }
+  .mainDiv{
+    display: none;
+  }
+  .mainDiv-mobile{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  .moreImages-mobile{
+    height: 50px;
+    width: 100%;
+    border: 1px solid black;
+  }
+  .mobile-hide{
+    display: none;
+  }
+
+}
+

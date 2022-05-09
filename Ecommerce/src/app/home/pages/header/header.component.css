@@ -1,0 +1,9 @@
+.navbar-toggle{
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .navbar-toggle {
+    display: block;
+  }
+}

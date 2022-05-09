@@ -1,0 +1,51 @@
+<section>
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+      <section class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card text-dark" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div>
+              <h2 class="fw-bold mb-2 text-uppercase text-danger">R e g i s t e r</h2>
+              <p class="text-dark-50 text-muted mb-3">Don't have an account? Register with us!</p>
+              <hr>
+              <form (ngSubmit)="register()">
+                <div class="form-outline mb-4">
+                  <label class="form-label">Name</label>
+                  <input type="text" name="name" class="form-control form-control-lg" [(ngModel)]="name"
+                         placeholder="Enter your Name"
+                         required>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="email" class="form-control form-control-lg" [(ngModel)]="email"
+                         placeholder="Enter email Id"
+                         required>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control form-control-lg" [(ngModel)]="password"
+                         placeholder="Enter Password"
+                         required>
+                </div>
+                <button class="btn btn-primary btn-md px-5" type="submit">Register</button>
+                <hr>
+                <p>Already have an account?
+                  <a class="text-primary-50 fw-bold" routerLink="/public/login">
+                    Sign In
+                  </a>
+                </p>
+              </form>
+              <div class="form-group">
+                <p *ngIf="errorMessage.length > 0" class="text-danger">
+                  {{errorMessage}}</p>
+
+                <p *ngIf="error.message.length > 0" class="text-danger">
+                  {{error.message}} </p>
+
+                <p *ngIf="message.length > 0" class="text-info">
+                  {{message}} </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
